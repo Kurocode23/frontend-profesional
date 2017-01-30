@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+header {
+  background-color: #273B47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 50px;
+}
+
+nav {
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 10px;
+  color: white;
+}
+
+nav li:after {
+  content: " | ";
+  display: inline-block;
+  margin: 0 10px; 
+}
+
+nav li:last-child:after {
+  display: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  border-top: 1px solid red;
+}
+
+.blog {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.portada {
+  position: relative;
+}
+
+.portada .description {
+  background-color: rgba(255,255,255,0.8);
+  padding: 20px;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.blog-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.item-blog {
+  width: 300px;
+}
