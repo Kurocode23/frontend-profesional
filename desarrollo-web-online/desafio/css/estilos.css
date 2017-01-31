@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: gray;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+header {
+  background-color: #273B47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 50px;
+}
+
+
+nav {
+  height: inherit;
+}
+
+nav ul {
+  height: inherit;
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  height: inherit;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+nav li:after {
+  content: " | ";
+  display: inline-block;
+  color: white;
+}
+
+nav li:last-child:after {
+  display: none;
+}
+
+nav a {
+  height: inherit;
+  color: white;
+  text-decoration: none;
+  /*border-top: 5px solid transparent;*/
+  display: flex;
+  padding: 0 10px; 
+  align-items: center;
+}
+
+nav a.is-active {
+  box-shadow: inset 0 5px 0 lightgreen;    
+}
+
+nav a:hover {
+  /*border-top: 5px solid #ff4842;*/
+  box-shadow: 0 5px 0 #ff4842 inset;
+}
+
+.button {
+  background: gray;
+  box-shadow: inset 0 -5px 0 rgba(0,0,0,0.3);
+  font-size: 14px;
+  padding: 5px 10px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: .2s ease;
+}
+
+.red {
+  background: #ff4842;
+  border-color: yellow;
+}
+
+.button:active {
+  transform: scale(.9);
+}
+
+
+.header-right {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.header-right .button {
+  margin-left: 10px; 
+}
+
+.blog {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.portada {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.portada .description {
+  background-color: rgba(255,255,255,0.8);
+  padding: 20px;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+
+
+.blog-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.item-blog {
+  width: 300px;
+}
+
+.item-blog .description {
+  margin-bottom: 15px;
+}
+
+.paginador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.paginador ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.paginador li {
+  background-color: #eaeaea;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid gray;
+  margin: 0 5px;
+}
+
+.paginador li.selected {
+  border-color: transparent;
+  background-color: white;
+}
+
+.paginador a {
+  text-decoration: none;
+  padding: 0 10px;
+  display: block;
+  height: inherit;
+}
+
+.author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  border-top: 1px solid gray;
+  padding-top: 15px;
+}
+
+.author p {
+  margin: 0;
+}
+
+.author img {
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
