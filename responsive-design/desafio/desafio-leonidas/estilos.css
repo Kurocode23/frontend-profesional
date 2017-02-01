@@ -1,0 +1,144 @@
+
+body {
+  margin: 0;
+}
+
+header > *,
+.portada > * {
+  border: 1px solid red;
+}
+
+
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2C4352;
+  color: white;
+  height: 50px;
+  align-items: center;
+  position: relative;
+}
+
+.portada {
+  display: flex;
+}
+
+.logo {
+  width: 40%;
+}
+
+.banner, .menu {
+  width: 30%;
+}
+
+.menu {
+  position: absolute;
+  left: 70%;
+  height: 50px;
+  top: 0;
+  background: purple;
+  color: white;
+  transition: 1s;
+}
+
+.col-1 {
+  width: 70%;
+  /*position: relative;*/
+  /*top: 0;*/
+  margin-top: 0;
+  background: lightblue;
+  transition: 1s;
+}
+
+.col-2 {
+  width: 30%;
+}
+
+.banner {
+  height: 50px;
+  background-color: lightgray;
+  color: black;
+  transition: .5s;
+  position: absolute;
+  left: 40%;
+  top: 0;
+}
+
+.col-2 {
+  position: relative;
+  top: 0;
+  transition: .5s;
+}
+
+@media screen and (max-width:768px) {
+
+  .logo {
+    width: 70%;
+  }
+  .banner {
+    left: 70%;
+    top: 50px;
+  }
+
+  .col-2 {
+    top: 50px;
+  }
+}
+
+
+
+@media screen and (max-width:600px) {
+  .menu {
+    left: 0;
+    top: 50px;
+    width: 70%;
+  }
+
+  .col-1 {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width:480px) {
+
+  .menu, .logo {
+    width: 100%;
+  }
+
+  .col-1 {
+    margin-top: 100px;
+    width: auto;
+  }
+
+  .banner {
+    top: 100px;
+    left: 0;
+    width: 100%;
+  }
+
+  .portada {
+    display: block;
+  }
+
+  .col-2 {
+    width: 100%;
+    top: 0;
+  }
+
+  /*.banner {
+    left: -35%;
+    top: 100px;
+    width: 70%;
+  }*/
+}
+
+
+
+
+
+
