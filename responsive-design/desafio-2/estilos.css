@@ -1,0 +1,39 @@
+body {
+  background: gray;
+}
+
+figure {
+  border: 10px solid gray;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  background-image: url('./balls.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+img {
+  transition: .5s;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  /*position: relative;
+  left: -40%;*/
+  transform: rotate(360deg);
+}
+
+img.b-loaded {
+  border-color: purple;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+}
+
+
+figcaption {
+  background: white;
+  font-size: 18px;
+  padding: 15px 10px;
+  border: 1px solid lightgreen;
+}

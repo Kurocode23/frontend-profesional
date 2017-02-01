@@ -1,0 +1,139 @@
+header {
+  color: white;
+}
+
+
+.header > *,
+.portada > * {
+  border: 1px solid red;
+}
+
+
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #2C4352;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  width: 40%;
+  transition: 1s;
+  position: relative;
+  left: 0;
+}
+
+.banner, .menu {
+  width: 30%;
+  height: 50px;
+}
+
+.banner {
+  background: gray;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  transition: 1s;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 70%;
+  background: darkorange;
+  color: blue;
+  transition: 1s;
+}
+
+.portada {
+  display: flex;
+  position: relative;
+  /*height: 200px;*/
+}
+
+.col-1, .col-2 {
+  /*height: 200px;*/
+}
+
+.col-1 {
+  width: 70%;
+  position: absolute;
+  top: 0;
+  background: skyblue;
+  height: 100px;
+}
+
+.col-2 {
+  width: 30%;
+  /*margin-left: 70%;*/
+  position: absolute;
+  background: hotpink;
+  right: 0;
+  transition: 1s;
+}
+
+@media screen and (max-width:768px) {
+  .banner {
+    left: 70%;
+    top: 50px;
+  }
+
+  .logo {
+    width: 70%;
+  }
+
+  .col-2 {
+    margin-top: 50px;    
+  }
+}
+
+@media screen and (max-width:600px) {
+  .menu {
+    top: 50px;
+    left: 0;
+    width: 70%;
+  }
+
+  .col-1 {
+    top: 50px;
+  }
+
+  .banner {
+    top: 0;
+  }
+
+  .col-2 {
+    top: -50px;
+  }
+}
+
+@media screen and (max-width:436px) {
+  .col-2 {
+    top: 100px;
+    width: 100%;
+  }
+  .col-1 {
+    width: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    left: 35%;
+  }
+
+  .menu, .banner {
+    width: 50%;
+  }
+
+  .banner {
+    top: 50px;
+    left: 50%;
+  }
+}
