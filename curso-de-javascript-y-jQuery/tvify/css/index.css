@@ -5,6 +5,11 @@ body {
 }
 
 
+.left {
+  float: left;
+}
+
+
 #app-container {
   width: 100%;
   overflow: hidden;
@@ -42,4 +47,26 @@ body {
   text-align: center;
   padding-top: 30px;
   border-top: 1px solid #7f8c8d;
+}
+
+.tv-show {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 16px;
+}
+
+
+.tv-show:hover {
+  background-color: #ecf0f1;
+}
+
+.tv-show img {
+  max-height: 60px;
+  max-width: 100px;
+}
+
+.tv-show .info {
+  padding-left: 20px;
 }
