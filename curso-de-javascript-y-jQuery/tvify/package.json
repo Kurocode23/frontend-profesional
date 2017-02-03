@@ -1,0 +1,22 @@
+{
+  "name": "tvify",
+  "description": "Una web app para seleccionar tus shows favoritos.",
+  "version": "0.1.0",
+  "scripts": {
+    "public": "mkdir -p public",
+    "copy-files": "cp src/css/index.css public/app.css && cp src/index.html public/index.html",
+    "build-js": "NODE_PATH=. browserify src/js/index.js > public/app.js -t [ babelify --presets [ es2015 ] ]",
+    "serve": "serve public --port 3000",
+    "build": "npm run public && npm run build-js && npm run copy-files"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "page": "^1.7.1",
+    "qs": "^6.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.0.0"
+  }
+}
