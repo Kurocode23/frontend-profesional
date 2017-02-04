@@ -1,0 +1,21 @@
+section(class="Layout")
+  section(class="Layout-antagonist")
+    each card in [1,2,3,4,5]
+      include ./../card/index.jade
+  section(class="Layout-main")
+
+    div(class="Layout-status")
+      each name in ["Archer", "Kurocode"]      
+        include ./../status/template.jade
+
+    div(class="Layout-battle")
+      include ./../battle/template.jade
+
+    div(class="Layout-phases")
+      div(class='Phases')
+        - text = "OMG ese ataque fue muy fuerte le quitaste 300 puntus"
+        include ./../phases/template.jade
+
+  section(class="Layout-player")
+    each card in [1,2,3,4,5]
+      include ./../card/index.jade

@@ -1,0 +1,20 @@
+{
+  "name": "marvel-game-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "stylus": "stylus -u nib -w -c -o ./public/css/ ./lib/app.styl",
+    "jade": "jade -o ./public/ ./lib/*.jade -w -P",
+    "start": "http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "nib": "^1.1.2",
+    "pug": "^2.0.0-beta10",
+    "stylus": "^0.54.5"
+  }
+}
