@@ -6,12 +6,14 @@
   "scripts": {
     "stylus": "stylus -u nib -w -c -o ./public/css/ ./lib/app.styl",
     "jade": "jade -o ./public/ ./lib/*.jade -w -P",
+    "babel": "babel --watch ./lib --out-dir ./public/",
     "start": "http-server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.5.2",
     "jade": "^1.11.0",
     "nib": "^1.1.2",
     "pug": "^2.0.0-beta10",
