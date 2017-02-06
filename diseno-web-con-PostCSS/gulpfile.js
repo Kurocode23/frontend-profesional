@@ -1,8 +1,9 @@
 var gulp = require('gulp')
 var postcss = require('gulp-postcss')
 var browserSync = require('browser-sync').create()
-var autoprefixer = require('autoprefixer')
+// var autoprefixer = require('autoprefixer')
 var cssnested = require('postcss-nested')
+var cssnext = require('postcss-cssnext')
 
 // Servidor de desarrollo
 gulp.task('serve', function () {
@@ -16,11 +17,11 @@ gulp.task('serve', function () {
 // Tarea para procesar el CSS
 gulp.task('css', function () {
   var processors = [
-    autoprefixer({
+    cssnested,
+    cssnext({
       // dar soporte a navegadores con mas de 5% de uso, tambien a ie8
       browsers: ['> 5%', 'ie 8']
-    }),
-    cssnested
+    })
   ]
 
   return gulp.src('./src/*.css')
