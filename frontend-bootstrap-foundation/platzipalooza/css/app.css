@@ -1,6 +1,6 @@
 body {
   background-color: #ee3f54;
-  font-family: 'Bree Serif', serif; 
+  font-family: 'Bree Serif', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,4 +92,29 @@ h1, h2, h3, h4, h5, h6 {
 
 #lineup-container .column:nth-child(odd) figcaption {
   text-align: right;
+}
+
+#tickets-container {
+  padding: 1em 0;
+  background-color: #f6e15f;
+  color: #161752;
+}
+
+.pricing-table {
+  border: 1px solid #161752;
+  font-family: 'Ravi Prakash', cursive;
+}
+
+.pricing-table li,
+.pricing-table li.description {
+  font-size: 20px;
+}
+
+.pricing-table li.price,
+.pricing-table li.title {
+  font-size: 30px;
+}
+
+.pricing-table a .button {
+  font-family: 'Bree Serif', serif;
 }
