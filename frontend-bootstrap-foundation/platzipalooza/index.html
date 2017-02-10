@@ -12,374 +12,421 @@
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body>
-    <!-- Social -->
-    <section id="social-container">
-      <div class="row align-center text-center">
-        <div class="column small-1">
-          <a href="#" target="_blank">
-            <i class="fi-social-facebook"></i>
-          </a>
+
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        
+        <div id="offCanvas" class="off-canvas position-left" data-off-canvas>
+          <nav data-magellan>
+            <ul class="vertical menu">
+              <li>
+                <a href="#tickets-container">Tickets</a>
+              </li>
+              <li >
+                <a href="#lineup-container">Lineaup</a>
+                <!--<ul id="submenu-container" class="menu">
+                  <li data-toggle-dia="panelViernes"><a href="#lineup-container">Viernes</a></li>
+                  <li data-toggle-dia="panelSabado"><a href="#lineup-container">Sabado</a></li>
+                  <li data-toggle-dia="panelDomingo"><a href="#lineup-container">Domingo</a></li>
+                </ul>-->
+              </li>
+              <li >
+                <a href="#info-container">Info</a>
+              </li>
+              <li >
+                <a href="#suscribete-container">Suscribete</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div class="column small-1">
-          <a href="#" target="_blank">
-            <i class="fi-social-twitter"></i>
-          </a>
-        </div>
-        <div class="column small-1">
-          <a href="#" target="_blank">
-            <i class="fi-social-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- /Social -->
 
-    <!-- Logo -->
-    <section id="logo-container">
-      <div class="callout text-center">
-        <h1>Platzipalooza</h1>
-      </div>
-    </section>
-    <!-- /Logo -->
+        <div class="off-canvas-content" data-off-canvas-content>
 
-    <!-- Menu -->
-    <section id="menu-container">
-      <ul class="menu dropdown align-spaced" data-dropdown-menu>
-        <li class="menu-text">
-          <a href="#">Tickets</a>
-        </li>
-        <li class="">
-          <a href="#">Lineaup</a>
-          <ul id="submenu-container" class="menu">
-            <li><a href="#">Viernes</a></li>
-            <li><a href="#">Sabado</a></li>
-            <li><a href="#">Domingo</a></li>
-          </ul>
-        </li>
-        <li class="">
-          <a href="#">Info</a>
-        </li>
-        <li class="">
-          <a href="#">Suscribete</a>
-        </li>
-      </ul>
-    </section>
-    <!-- /Menu -->
-
-    <!-- Tickets -->
-    <section id="tickets-action">
-      <div class="callout large text-center">
-        <a href="#">
-          <button class="button hollow large">Comprar boletos</button>
-        </a>
-      </div>
-    </section>
-    <!-- /Tickets -->
-    
-    <!-- Lineup -->
-    <section id="lineup-container">
-      <h3 class="text-center">Lineaup</h3>
-      <ul id="lineup-tabs" class="tabs text-center" data-tabs>
-        <li class="tabs-title is-active"><a href="#panelViernes">Viernes</a></li>
-        <li class="tabs-title"><a href="#panelSabado">Sabado</a></li>
-        <li class="tabs-title"><a href="#panelDomingo">Domingo</a></li>
-      </ul>
-
-      <div class="tabs-content" data-tabs-content="lineup-tabs">
-        <div id="panelViernes" class="tabs-panel">
-          <div class="row">
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
-                    <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
-                  </div>
-                </div>
+          <!-- Social -->
+          <section id="social-container">
+            <div class="row align-center text-center">
+              <div class="column small-1">
+                <a href="#" target="_blank">
+                  <i class="fi-social-facebook"></i>
+                </a>
+              </div>
+              <div class="column small-1">
+                <a href="#" target="_blank">
+                  <i class="fi-social-twitter"></i>
+                </a>
+              </div>
+              <div class="column small-1">
+                <a href="#" target="_blank">
+                  <i class="fi-social-instagram"></i>
+                </a>
               </div>
             </div>
+          </section>
+          <!-- /Social -->
 
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
-                    <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
-                  </div>
-                </div>
-              </div>
+          <!-- Logo -->
+          <section id="logo-container">
+            <div class="callout text-center">
+              <h1>Platzipalooza</h1>
             </div>
+          </section>
+          <!-- /Logo -->
 
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
-                    <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <!-- Menu -->
+          <section id="scrollSticky" data-sticky-container>
+            <div class="data-sticky" data-sticky data-options="marginTop:0;" data-sticky-on="small" data-top-anchor="scrollSticky">
+              <nav id="menu-container" data-magellan>
+                
+                <ul class="menu align-spaced show-for-small-only">
+                  <li><a href="#" data-toggle="offCanvas">menu</a></li>
+                </ul>
 
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
-                    <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <ul class="menu dropdown align-spaced show-for-medium" data-dropdown-menu>
+                  <li class="menu-text">
+                    <a href="#tickets-container">Tickets</a>
+                  </li>
+                  <li >
+                    <a href="#lineup-container">Lineaup</a>
+                    <ul id="submenu-container" class="menu">
+                      <li data-toggle-dia="panelViernes"><a href="#lineup-container">Viernes</a></li>
+                      <li data-toggle-dia="panelSabado"><a href="#lineup-container">Sabado</a></li>
+                      <li data-toggle-dia="panelDomingo"><a href="#lineup-container">Domingo</a></li>
+                    </ul>
+                  </li>
+                  <li >
+                    <a href="#info-container">Info</a>
+                  </li>
+                  <li >
+                    <a href="#suscribete-container">Suscribete</a>
+                  </li>
+                </ul>
 
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
-                    <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
-                  </div>
-                </div>
-              </div>
+              </nav>
             </div>
+          </section>
+          <!-- /Menu -->
 
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
-                    <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
-                  </div>
-                </div>
-              </div>
+          <!-- Tickets -->
+          <section id="tickets-action">
+            <div class="callout large text-center">
+              <a href="#">
+                <button class="button hollow large">Comprar boletos</button>
+              </a>
             </div>
+          </section>
+          <!-- /Tickets -->
           
-          </div>
+          <!-- Lineup -->
+          <section id="lineup-container" data-magellan-target="lineaup-container">
+            <h3 class="text-center">Lineaup</h3>
+            <ul id="lineup-tabs" class="tabs text-center" data-tabs>
+              <li class="tabs-title is-active"><a href="#panelViernes">Viernes</a></li>
+              <li class="tabs-title"><a href="#panelSabado">Sabado</a></li>
+              <li class="tabs-title"><a href="#panelDomingo">Domingo</a></li>
+            </ul>
+
+            <div class="tabs-content" data-tabs-content="lineup-tabs">
+              <div id="panelViernes" class="tabs-panel">
+                <div class="row">
+                  
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
+                          <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
+                          <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
+                          <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
+                          <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
+                          <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/gunsnroses.jpg" alt="Gun's n' Roses">
+                          <figcaption class="orbit-caption">Gun's n' Roses</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+              <div id="panelSabado" class="tabs-panel">
+
+                <div class="row">
+                  
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
+                          <figcaption class="orbit-caption">Quenns</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
+                          <figcaption class="orbit-caption">Quenns</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
+                          <figcaption class="orbit-caption">Quenns</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
+                          <figcaption class="orbit-caption">Quenns</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
+                          <figcaption class="orbit-caption">Quenns</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
+                          <figcaption class="orbit-caption">Quenns</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+
+              </div>
+              <div id="panelDomingo" class="tabs-panel">
+                <div class="row">
+                  
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
+                          <figcaption class="orbit-caption">Beatles</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
+                          <figcaption class="orbit-caption">Beatles</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
+                          <figcaption class="orbit-caption">Beatles</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
+                          <figcaption class="orbit-caption">Beatles</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
+                          <figcaption class="orbit-caption">Beatles</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="small-12 medium-6 column">
+                    <div class="orbit" data-orbit>
+                      <div class="orbit-container">
+                        <div class="orbit-slide">
+                          <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
+                          <figcaption class="orbit-caption">Beatles</figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /Lineup -->
+
+          <!-- Comprar Boleto -->
+          <section id="tickets-container" data-magellan-target="tickets-container">
+            <h3 class="text-center">Comprar boletos</h3>
+            <div class="row" data-equalizer data-equalize-on="small">
+              <div class="column small-10 small-offset-1 medium-6 medium-offset-3">
+                <ul class="pricing-table no-bullet text-center">
+                  <li class="title">Platino</li>
+                  <li class="price">$120</li>
+                  <li class="description">Acceso viernes, sabado y domingo</li>
+                  <li>2 bebidas por cada dia</li>
+                  <li>Parqueadero incluido todos los dias</li>
+                  <li>Participa de un sorteo para cceder al backstage</li>
+                  <li><a class="button" href="#">Comprar platino</a></li>
+                </ul>
+              </div>
+
+              <div class="column small-6 medium-4 medium-offset-2">
+                <ul class="pricing-table no-bullet text-center">
+                  <li class="title">Gold</li>
+                  <li class="price">$90</li>
+                  <li class="description">Acceso viernes, sabado y domingo</li>
+                  <li data-equalizer-watch>Una bebida incluida por cada dia</li>
+                  <li>-</li>
+                  <li>-</li>
+                  <li><a class="button" href="#">Comprar gold</a></li>
+                </ul>
+              </div>
+
+              <div class="column small-6 medium-4">
+                <ul class="pricing-table no-bullet text-center">
+                  <li class="title">Silver</li>
+                  <li class="price">$65</li>
+                  <li class="description">Acceso viernes, sabado y domingo</li>
+                  <li data-equalizer-watch>-</li>
+                  <li>-</li>
+                  <li>-</li>
+                  <li><a class="button" href="#">Comprar gold</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </section>
+          <!-- /Comprar Boleto -->
+
+          <!-- Suscribete -->
+          <section id="suscribete-container" data-magellan-target="suscribete-container">
+            <h3 class="text-center">Suscribete</h3>
+            <h4 class="text-center"><small>Y recibe las ultimas novedades del concierto</small></h4>
+            <form action="" method="" novalidate data-abide>
+              <div data-abide-error class="row column small-12 medium-6 text-center error-container" style="display: none;">
+                <p><i class="fi-alert"></i>Ingreso un correo electronico no valido</p>
+              </div>
+              <div class="row column small-12 medium-6">
+                <div class="input-group">
+                  <span class="input-group-label">
+                    <i class="fi-mail"></i>
+                  </span>
+                  <input type="email" class="input-group-field" name="email" placeholder="tu@correo.com" required>
+                  <div class="input-group-button">
+                    <input class="button" type="submit" value="Suscribirse!" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+          <!-- /Suscribete -->
+
+          <!-- Info -->
+          <section id="info-container" data-magellan-target="info-container">
+            <h3 class="text-center">Informacion</h3>
+            <div class="text-center">
+              <div class="info-map" data-interchange="[assets/map-small.html, small], [assets/map.html, medium]"></div>
+            </div>
+          </section>
+          <!-- /Info -->
+
         </div>
-        <div id="panelSabado" class="tabs-panel">
 
-          <div class="row">
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
-                    <figcaption class="orbit-caption">Quenns</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
-                    <figcaption class="orbit-caption">Quenns</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
-                    <figcaption class="orbit-caption">Quenns</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
-                    <figcaption class="orbit-caption">Quenns</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
-                    <figcaption class="orbit-caption">Quenns</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/quenns.jpg" alt="Quenns">
-                    <figcaption class="orbit-caption">Quenns</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          </div>
-
-        </div>
-        <div id="panelDomingo" class="tabs-panel">
-          <div class="row">
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
-                    <figcaption class="orbit-caption">Beatles</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
-                    <figcaption class="orbit-caption">Beatles</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
-                    <figcaption class="orbit-caption">Beatles</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
-                    <figcaption class="orbit-caption">Beatles</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
-                    <figcaption class="orbit-caption">Beatles</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit" data-orbit>
-                <div class="orbit-container">
-                  <div class="orbit-slide">
-                    <img class="orbit-image" src="./assets/beatles.jpg" alt="beatles">
-                    <figcaption class="orbit-caption">Beatles</figcaption>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          </div>
-        </div>
       </div>
-    </section>
-    <!-- /Lineup -->
+    </div>
 
-    <!-- Comprar Boleto -->
-    <section id="tickets-container">
-      <h3 class="text-center">Comprar boletos</h3>
-      <div class="row" data-equalizer data-equalize-on="small">
-        <div class="column small-10 small-offset-1 medium-6 medium-offset-3">
-          <ul class="pricing-table no-bullet text-center">
-            <li class="title">Platino</li>
-            <li class="price">$120</li>
-            <li class="description">Acceso viernes, sabado y domingo</li>
-            <li>2 bebidas por cada dia</li>
-            <li>Parqueadero incluido todos los dias</li>
-            <li>Participa de un sorteo para cceder al backstage</li>
-            <li><a class="button" href="#">Comprar platino</a></li>
-          </ul>
-        </div>
-
-        <div class="column small-6 medium-4 medium-offset-2">
-          <ul class="pricing-table no-bullet text-center">
-            <li class="title">Gold</li>
-            <li class="price">$90</li>
-            <li class="description">Acceso viernes, sabado y domingo</li>
-            <li data-equalizer-watch>Una bebida incluida por cada dia</li>
-            <li>-</li>
-            <li>-</li>
-            <li><a class="button" href="#">Comprar gold</a></li>
-          </ul>
-        </div>
-
-        <div class="column small-6 medium-4">
-          <ul class="pricing-table no-bullet text-center">
-            <li class="title">Silver</li>
-            <li class="price">$65</li>
-            <li class="description">Acceso viernes, sabado y domingo</li>
-            <li data-equalizer-watch>-</li>
-            <li>-</li>
-            <li>-</li>
-            <li><a class="button" href="#">Comprar gold</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-    <!-- /Comprar Boleto -->
-
-    <!-- Suscribete -->
-    <section id="suscribete-container">
-      <h3 class="text-center">Suscribete</h3>
-      <h4 class="text-center"><small>Y recibe las ultimas novedades del concierto</small></h4>
-      <form action="" method="" novalidate data-abide>
-        <div data-abide-error class="row column small-12 medium-6 text-center error-container" style="display: none;">
-          <p><i class="fi-alert"></i>Ingreso un correo electronico no valido</p>
-        </div>
-        <div class="row column small-12 medium-6">
-          <div class="input-group">
-            <span class="input-group-label">
-              <i class="fi-mail"></i>
-            </span>
-            <input type="email" class="input-group-field" name="email" placeholder="tu@correo.com" required>
-            <div class="input-group-button">
-              <input class="button" type="submit" value="Suscribirse!" />
-            </div>
-          </div>
-        </div>
-      </form>
-    </section>
-    <!-- /Suscribete -->
-
-    <!-- Info -->
-    <section id="info-container">
-      <h3 class="text-center">Informacion</h3>
-      <div class="text-center">
-        <div class="info-map" data-interchange="[assets/map-small.html, small], [assets/map.html, medium]"></div>
-      </div>
-    </section>
-    <!-- /Info -->
+   
     
     
     <script src="js/vendor/jquery.js"></script>

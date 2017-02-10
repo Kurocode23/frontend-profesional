@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6, input[type="submit"] {
 
 #menu-container li a {
   color: white;
+  text-transform: uppercase;
 }
 
 #menu-container li a:hover,
@@ -147,3 +148,16 @@ h1, h2, h3, h4, h5, h6, input[type="submit"] {
   background-color: rgb(255, 228, 228);
   border-color: rgb(255, 255, 255);
 }
+
+.data-sticky  {
+  width: 100%;
+  z-index: 100;
+}
+
+#offCanvas,
+#offCanvas li a {
+  background-color: black;
+  font-family: 'Bree Serif', serif;
+  color: white;
+}
+
