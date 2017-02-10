@@ -1,0 +1,25 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#header-container {
+  background-color: #99c84a;
+  color: white;
+}
+
+#menu-container {
+  background-color: #F7F7F9;
+}
+
+.btn.btn-platzi {
+  background-color: #99c84a;
+  color: white;
+}
+
+.btn.btn-platzi:hover {
+  background-color: #8ab542;
+}
+
+input.form-control:focus {
+  border-color: #8ab542;
+}

@@ -161,3 +161,11 @@ h1, h2, h3, h4, h5, h6, input[type="submit"] {
   color: white;
 }
 
+
+#offCanvas .is-drilldown-submenu-parent > a::after {
+  border-color: transparent transparent transparent white;
+}
+
+#offCanvas .js-drilldown-back > a::before {
+  border-color: transparent white transparent transparent;
+}
