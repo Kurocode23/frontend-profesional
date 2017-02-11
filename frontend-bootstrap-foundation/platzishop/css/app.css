@@ -2,8 +2,14 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-#header-container {
+#header-container,
+#info-container {
   background-color: #99c84a;
+  color: white;
+}
+
+#header-container .login,
+#header-container .navbar-toggler {
   color: white;
 }
 
@@ -22,4 +28,21 @@ body {
 
 input.form-control:focus {
   border-color: #8ab542;
+}
+
+#search-bar {
+  padding: 1em;
+}
+
+#productosCarousel img {
+  margin: 0 auto;
+}
+
+#info-container h4{
+  margin: 1em 0;
+}
+
+#info-container img {
+  margin: 0 auto;
+  margin-top: 2em;
 }
