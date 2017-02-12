@@ -1,11 +1,15 @@
 $(document).foundation()
 
-$('[data-toggle-dia]').click(function (ev) {
-  var panel = $(this).data('toggleDia')
-  $('#lineup-tabs').foundation('selectTab', panel)
-})
+$('[data-toggle-dia]').click(function () {
+  $('#lineup-tabs').foundation('selectTab', $(this).data('toggleDia'))
+});
 
-const $offCanvas = $('#offCanvas')
-$offCanvas.find('li').click(function (ev) {
-  $offCanvas.foundation('close')
+var $offCanvas = $('#offCanvas');
+var $sticky = $('#sticky');
+
+$offCanvas.find('li').click(() => {
+  $offCanvas.foundation('close');
+  setTimeout(() => {
+    $sticky.css('left', '0px');
+  }, 300)
 })
