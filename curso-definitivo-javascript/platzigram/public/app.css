@@ -6501,6 +6501,9 @@ body {
   float: left;
   margin-right: 17px; }
 
+.card .username {
+  color: #125688; }
+
 .card small.time {
   line-height: 48px; }
 
@@ -6516,3 +6519,13 @@ body {
 
 .card .fa-heart-o {
   color: #125688; }
+
+.card .fa-heart {
+  color: #f44336;
+  display: none; }
+
+.card.liked .fa-heart {
+  display: block; }
+
+.card.liked .fa-heart-o {
+  display: none; }

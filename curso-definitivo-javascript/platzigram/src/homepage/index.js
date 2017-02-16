@@ -16,8 +16,9 @@ page('/', function (ctx, next) {
         avatar: 'avatar.jpeg'
       },
       url: 'office.jpg',
-      likes: 24,
-      liked: true
+      likes: 0,
+      liked: false,
+      createdAt: new Date()
     },
 
     {
@@ -26,8 +27,9 @@ page('/', function (ctx, next) {
         avatar: 'avatar.jpeg'
       },
       url: 'office.jpg',
-      likes: 12,
-      liked: true
+      likes: 1,
+      liked: true,
+      createdAt: new Date().setDate(new Date().getDate() - 10)
     }
   ]
 
