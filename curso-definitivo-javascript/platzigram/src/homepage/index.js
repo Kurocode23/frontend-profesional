@@ -1,63 +1,60 @@
-var page  = require('page')
-var empty = require('empty-element')
-var title = require('title')
-var request = require('superagent')
-var axios = require('axios')
-
-var template = require('./template')
-var header = require('./../header')
-
+var page = require('page');
+var empty = require('empty-element');
+var template = require('./template');
+var title = require('title');
+var request = require('superagent');
+var header = require('../header');
+var axios = require('axios');
 
 page('/', header, asyncLoad, function (ctx, next) {
-  title('Platzigram')
-  var main = document.getElementById('main-container')
+  title('Platzigram');
+  var main = document.getElementById('main-container');
 
-  empty(main).appendChild(template(ctx.pictures))
+  empty(main).appendChild(template(ctx.pictures));
 })
 
-function loadPictures (ctx, next) {
+function loadPictures(ctx, next) {
   request
     .get('/api/pictures')
     .end(function (err, res) {
-      if (err) return console.log(err)
+      if (err) return console.log(err);
 
-      ctx.pictures = res.body
-      next()
+      ctx.pictures = res.body;
+      next();
     })
 }
 
-function loadPicturesAxios (ctx, next) {
+function loadPicturesAxios(ctx, next) {
   axios
     .get('/api/pictures')
     .then(function (res) {
-      ctx.pictures = res.data
-      next()
+      ctx.pictures = res.data;
+      next();
     })
     .catch(function (err) {
-      return console.log(err)
+      console.log(err);
     })
 }
 
-function loadPicturesFetch (ctx, next) {
+function loadPicturesFetch(ctx, next) {
   fetch('/api/pictures')
     .then(function (res) {
-      return res.json()
+      return res.json();
     })
     .then(function (pictures) {
-      ctx.pictures = pictures
-      next()
+      ctx.pictures = pictures;
+      next();
     })
     .catch(function (err) {
-      return console.log(err)
+      console.log(err);
     })
 }
 
-async function asyncLoad (ctx, next) {
+async function asyncLoad(ctx, next) {
   try {
-    ctx.pictures  = await fetch('/api/pictures').then(res => res.json())
-    next()
-
+    ctx.pictures = await fetch('/api/pictures').then(res => res.json());
+    next();
   } catch (err) {
-    return console.log(err)
+    return console.log(err);
   }
 }

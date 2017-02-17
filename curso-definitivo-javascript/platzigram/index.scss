@@ -1,15 +1,15 @@
 $secondary-color: #125688;
+
 @import "node_modules/materialize-css/sass/materialize.scss";
 
-
 body {
-  background-color: #fafafa;
-  color: #125688;
-  font-family: 'Montserrat', sans-serif;
+  background: #fafafa;
+  color: $secondary-color;
+  font-family: Montserrat;
 }
 
-#main-container {
-  margin: 0 auto;
+.landing {
+  margin: 30px auto;
 }
 
 .iphone {
@@ -31,9 +31,9 @@ body {
 }
 
 .platzigram {
-  color: $secondary-color !important;
-  font-family: 'Oleo Script', cursive;
+  font-family: 'Oleo Script';
   font-size: 42px;
+  color: $secondary-color !important;
 }
 
 .signup-form {
@@ -52,7 +52,7 @@ body {
 }
 
 .signup-form .btn.btn-fb:hover {
-  background-color: #126599;
+  background-color: #2d6599;
 }
 
 .signup-form .btn.btn-signup {
@@ -70,17 +70,14 @@ body {
   padding: 30px 0;
 }
 
-.landing {
-  margin: 30px auto;
-}
-
 $avatar-size: 48px;
 
 .avatar {
-  max-width: $avatar-size;
+  width: $avatar-size;
+  height: $avatar-size;
   border-radius: 50%;
   float: left;
-  margin-right: 17px;
+  margin-right: 12px;
 }
 
 .card .username {
@@ -113,7 +110,7 @@ $avatar-size: 48px;
   display: none;
 }
 
-.card.liked { 
+.card.liked {
   .fa-heart {
     display: block;
   }
@@ -121,4 +118,35 @@ $avatar-size: 48px;
   .fa-heart-o {
     display: none;
   }
+}
+
+.form-upload {
+
+  span, button {
+    color: white;
+  }
+
+  .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+
+
+    input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+
+  }
+
+
+
 }

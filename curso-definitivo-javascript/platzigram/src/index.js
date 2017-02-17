@@ -1,11 +1,9 @@
-'use strict'
-require('babel-polyfill')
+require('babel-polyfill');
+var page = require('page');
 
-var page  = require('page')
+require('./homepage');
+require('./signup');
+require('./signin');
+require('./footer');
 
-require('./homepage')
-require('./signup')
-require('./signin')
-require('./footer')
-
-page()
+page();
