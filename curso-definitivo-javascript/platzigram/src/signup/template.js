@@ -1,5 +1,6 @@
 var yo = require('yo-yo')
 var landing = require('./../landing/index')
+var traslate = require('../traslate')
 
 var signupForm = yo`
   <div class="col s12 m7">
@@ -8,7 +9,7 @@ var signupForm = yo`
         <h1 class="platzigram">Platzigram</h1>
       
         <form class="signup-form">
-          <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>
+          <h2>${traslate.message('signup.subheading')}</h2>
           <div class="section">
             <a href="#" class="btn btn-fb hide-on-small-only">Iniciar sesion con Facebook</a>
             <a href="#" class="btn btn-fb hide-on-med-and-up"><i class="fa facebook-official"></i> Iniciar sesion</a>

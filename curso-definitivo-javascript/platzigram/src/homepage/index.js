@@ -1,37 +1,63 @@
 var page  = require('page')
 var empty = require('empty-element')
 var title = require('title')
+var request = require('superagent')
+var axios = require('axios')
 
 var template = require('./template')
+var header = require('./../header')
 
 
-page('/', function (ctx, next) {
+page('/', header, asyncLoad, function (ctx, next) {
   title('Platzigram')
   var main = document.getElementById('main-container')
 
-  var pictures = [
-    {
-      user: {
-        username: 'Kurocode',
-        avatar: 'avatar.jpeg'
-      },
-      url: 'office.jpg',
-      likes: 0,
-      liked: false,
-      createdAt: new Date()
-    },
-
-    {
-      user: {
-        username: 'Archer',
-        avatar: 'avatar.jpeg'
-      },
-      url: 'office.jpg',
-      likes: 1,
-      liked: true,
-      createdAt: new Date().setDate(new Date().getDate() - 10)
-    }
-  ]
-
-  empty(main).appendChild(template(pictures))
+  empty(main).appendChild(template(ctx.pictures))
 })
+
+function loadPictures (ctx, next) {
+  request
+    .get('/api/pictures')
+    .end(function (err, res) {
+      if (err) return console.log(err)
+
+      ctx.pictures = res.body
+      next()
+    })
+}
+
+function loadPicturesAxios (ctx, next) {
+  axios
+    .get('/api/pictures')
+    .then(function (res) {
+      ctx.pictures = res.data
+      next()
+    })
+    .catch(function (err) {
+      return console.log(err)
+    })
+}
+
+function loadPicturesFetch (ctx, next) {
+  fetch('/api/pictures')
+    .then(function (res) {
+      return res.json()
+    })
+    .then(function (pictures) {
+      ctx.pictures = pictures
+      next()
+    })
+    .catch(function (err) {
+      return console.log(err)
+    })
+}
+
+async function asyncLoad (ctx, next) {
+  try {
+    ctx.pictures  = await fetch('/api/pictures').then(res => res.json())
+    next()
+
+  } catch (err) {
+    return console.log(err)
+  }
+}

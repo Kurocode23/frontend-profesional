@@ -32,11 +32,11 @@ gulp.task('watch', function () {
 })
 
 function compile (watch) {
-  var bundle = watchify(browserify('./src/index.js', {debug: true}))
+  var bundle = browserify('./src/index.js', {debug: true})
 
   function rebundle () {
     bundle
-      .transform(babel, {presets: ['es2015']})
+      .transform(babel, {presets: ['es2015'], plugins: ['syntax-async-functions', 'transform-regenerator']})
       .bundle()
       .on('error', function (err) { console.log(err); this.emit('end') })
       .pipe(source('index.js'))
@@ -45,6 +45,7 @@ function compile (watch) {
   }
 
   if (watch) {
+    bundle = watchify(bundle)
     bundle.on('update', function () {
       console.log('--> Bundling...')
       rebundle()
