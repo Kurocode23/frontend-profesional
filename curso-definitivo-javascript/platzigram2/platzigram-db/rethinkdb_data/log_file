@@ -1,0 +1,135 @@
+2017-02-20T15:25:44.842949573 7.607140s notice: Recursively removing directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/tmp
+2017-02-20T15:25:44.890533014 7.654725s notice: Initializing directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-20T15:25:44.898289479 7.662479s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data' did not already exist or is empty.)
+2017-02-20T15:25:44.898341399 7.662531s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-20T15:25:44.902347526 7.666539s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-20T15:25:44.902421925 7.666611s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-20T15:25:45.284704800 8.048895s info: Automatically using cache size of 2274 MB
+2017-02-20T15:25:45.285905685 8.050095s notice: Listening for intracluster connections on port 29015
+2017-02-20T15:25:45.325528458 8.089718s notice: Listening for client driver connections on port 28015
+2017-02-20T15:25:45.325626333 8.089816s notice: Listening for administrative HTTP connections on port 8080
+2017-02-20T15:25:45.325630592 8.089820s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T15:25:45.325632232 8.089821s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T15:25:45.325644218 8.089833s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T15:25:45.325646003 8.089835s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-20T15:25:45.325648805 8.089838s notice: Server ready, "archer_kvj" d38d48d3-054e-4e3a-a195-47053634b560
+2017-02-20T15:27:28.544477990 111.308668s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-20T15:27:28.564087174 111.328277s notice: Shutting down client connections...
+2017-02-20T15:27:28.564228165 111.328417s notice: All client connections closed.
+2017-02-20T15:27:28.564233956 111.328423s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-20T15:27:28.569818008 111.334008s notice: Storage engine shut down.
+2017-02-20T16:34:37.975978297 11.363942s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-20T16:34:37.978673599 11.366636s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-20T16:34:37.978732837 11.366694s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-20T16:34:38.072766094 11.460728s info: Automatically using cache size of 1833 MB
+2017-02-20T16:34:38.075003405 11.462964s notice: Listening for intracluster connections on port 29015
+2017-02-20T16:34:38.076860105 11.464821s notice: Listening for client driver connections on port 28015
+2017-02-20T16:34:38.077016202 11.464977s notice: Listening for administrative HTTP connections on port 8080
+2017-02-20T16:34:38.077019008 11.464980s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T16:34:38.077023061 11.464984s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T16:34:38.077027309 11.464988s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T16:34:38.077029545 11.464990s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-20T16:34:38.077032871 11.464993s notice: Server ready, "archer_kvj" d38d48d3-054e-4e3a-a195-47053634b560
+2017-02-20T16:35:31.393338679 64.781308s info: Table bf7626d4-1a0c-4fe0-a5be-a6d386b06473: Starting a new Raft election for term 1.
+2017-02-20T16:35:31.410717629 64.798679s info: Table bf7626d4-1a0c-4fe0-a5be-a6d386b06473: Added replica on this server.
+2017-02-20T16:35:31.520791812 64.908753s info: Table bf7626d4-1a0c-4fe0-a5be-a6d386b06473: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T16:35:32.854096400 66.242057s info: Table 1da67fb9-540d-4236-9603-42596fef8a04: Starting a new Raft election for term 1.
+2017-02-20T16:35:32.854325684 66.242286s info: Table 1da67fb9-540d-4236-9603-42596fef8a04: Added replica on this server.
+2017-02-20T16:35:32.912637944 66.300599s info: Table 1da67fb9-540d-4236-9603-42596fef8a04: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T16:43:23.033823624 536.421785s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-20T16:43:23.033950313 536.421911s notice: Shutting down client connections...
+2017-02-20T16:43:23.033993098 536.421954s notice: All client connections closed.
+2017-02-20T16:43:23.033994744 536.421955s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-20T16:43:23.055822116 536.443783s notice: Storage engine shut down.
+2017-02-20T16:50:43.635799138 9.888340s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-20T16:50:43.637988731 9.890529s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-20T16:50:43.638046309 9.890586s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-20T16:50:43.721271024 9.973811s info: Automatically using cache size of 1762 MB
+2017-02-20T16:50:43.723981516 9.976521s notice: Listening for intracluster connections on port 29015
+2017-02-20T16:50:43.774324236 10.026864s notice: Listening for client driver connections on port 28015
+2017-02-20T16:50:43.774500600 10.027040s notice: Listening for administrative HTTP connections on port 8080
+2017-02-20T16:50:43.774503999 10.027043s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T16:50:43.774506282 10.027045s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T16:50:43.774508402 10.027047s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T16:50:43.774510835 10.027050s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-20T16:50:43.774520765 10.027060s notice: Server ready, "archer_kvj" d38d48d3-054e-4e3a-a195-47053634b560
+2017-02-20T16:50:44.960110274 11.212650s info: Table bf7626d4-1a0c-4fe0-a5be-a6d386b06473: Starting a new Raft election for term 2.
+2017-02-20T16:50:45.093166423 11.345706s info: Table bf7626d4-1a0c-4fe0-a5be-a6d386b06473: This server is Raft leader for term 2. Latest log index is 3.
+2017-02-20T16:50:45.320170459 11.572710s info: Table 1da67fb9-540d-4236-9603-42596fef8a04: Starting a new Raft election for term 2.
+2017-02-20T16:50:45.414600447 11.667140s info: Table 1da67fb9-540d-4236-9603-42596fef8a04: This server is Raft leader for term 2. Latest log index is 3.
+2017-02-20T16:53:34.421005818 180.673545s info: Table 9b5c6718-b5ce-4131-a726-64b11f21aa7a: Starting a new Raft election for term 1.
+2017-02-20T16:53:34.421246942 180.673786s info: Table 9b5c6718-b5ce-4131-a726-64b11f21aa7a: Added replica on this server.
+2017-02-20T16:53:34.480423395 180.732963s info: Table 9b5c6718-b5ce-4131-a726-64b11f21aa7a: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T16:53:35.723849102 181.976389s info: Table a269b6d9-0f27-4c00-99ee-9dd8a757a46e: Starting a new Raft election for term 1.
+2017-02-20T16:53:35.724069121 181.976609s info: Table a269b6d9-0f27-4c00-99ee-9dd8a757a46e: Added replica on this server.
+2017-02-20T16:53:35.780357634 182.032897s info: Table a269b6d9-0f27-4c00-99ee-9dd8a757a46e: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T16:56:51.954392735 378.206932s info: Table fd42f482-768a-4422-b3ff-c51f307a0d91: Starting a new Raft election for term 1.
+2017-02-20T16:56:51.954565075 378.207104s info: Table fd42f482-768a-4422-b3ff-c51f307a0d91: Added replica on this server.
+2017-02-20T16:56:51.998786980 378.251327s info: Table fd42f482-768a-4422-b3ff-c51f307a0d91: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T16:56:53.258656830 379.511196s info: Table dfd7bfa1-9989-467b-8fe8-8b6b6c7a7eb0: Starting a new Raft election for term 1.
+2017-02-20T16:56:53.258940266 379.511480s info: Table dfd7bfa1-9989-467b-8fe8-8b6b6c7a7eb0: Added replica on this server.
+2017-02-20T16:56:53.340428704 379.592968s info: Table dfd7bfa1-9989-467b-8fe8-8b6b6c7a7eb0: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T16:59:59.145146215 565.397686s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/dfd7bfa1-9989-467b-8fe8-8b6b6c7a7eb0
+2017-02-20T16:59:59.145152906 565.397692s info: Table dfd7bfa1-9989-467b-8fe8-8b6b6c7a7eb0: Deleted the table.
+2017-02-20T16:59:59.202644348 565.455184s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/fd42f482-768a-4422-b3ff-c51f307a0d91
+2017-02-20T16:59:59.202648556 565.455188s info: Table fd42f482-768a-4422-b3ff-c51f307a0d91: Deleted the table.
+2017-02-20T17:00:23.255347906 589.507887s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/9b5c6718-b5ce-4131-a726-64b11f21aa7a
+2017-02-20T17:00:23.255353380 589.507892s info: Table 9b5c6718-b5ce-4131-a726-64b11f21aa7a: Deleted the table.
+2017-02-20T17:00:23.309175649 589.561715s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/a269b6d9-0f27-4c00-99ee-9dd8a757a46e
+2017-02-20T17:00:23.309180977 589.561720s info: Table a269b6d9-0f27-4c00-99ee-9dd8a757a46e: Deleted the table.
+2017-02-20T17:00:45.739352989 611.991892s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/1da67fb9-540d-4236-9603-42596fef8a04
+2017-02-20T17:00:45.739358604 611.991898s info: Table 1da67fb9-540d-4236-9603-42596fef8a04: Deleted the table.
+2017-02-20T17:00:45.800217450 612.052757s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/bf7626d4-1a0c-4fe0-a5be-a6d386b06473
+2017-02-20T17:00:45.800222987 612.052762s info: Table bf7626d4-1a0c-4fe0-a5be-a6d386b06473: Deleted the table.
+2017-02-20T17:01:06.079360893 632.331901s info: Table 3278c651-6a81-4b3a-9bb9-0ebed75d3b63: Starting a new Raft election for term 1.
+2017-02-20T17:01:06.079558797 632.332098s info: Table 3278c651-6a81-4b3a-9bb9-0ebed75d3b63: Added replica on this server.
+2017-02-20T17:01:06.129482106 632.382022s info: Table 3278c651-6a81-4b3a-9bb9-0ebed75d3b63: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T17:01:07.415929683 633.668469s info: Table 60877bb1-2bcd-4c04-8fdc-c52ce764a298: Starting a new Raft election for term 1.
+2017-02-20T17:01:07.416126084 633.668665s info: Table 60877bb1-2bcd-4c04-8fdc-c52ce764a298: Added replica on this server.
+2017-02-20T17:01:07.471128928 633.723668s info: Table 60877bb1-2bcd-4c04-8fdc-c52ce764a298: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T17:01:08.456284263 634.708824s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/3278c651-6a81-4b3a-9bb9-0ebed75d3b63
+2017-02-20T17:01:08.456289961 634.708829s info: Table 3278c651-6a81-4b3a-9bb9-0ebed75d3b63: Deleted the table.
+2017-02-20T17:01:08.514559995 634.767100s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/60877bb1-2bcd-4c04-8fdc-c52ce764a298
+2017-02-20T17:01:08.514565443 634.767105s info: Table 60877bb1-2bcd-4c04-8fdc-c52ce764a298: Deleted the table.
+2017-02-20T17:09:32.816274599 1139.068815s info: Table 68626a63-36d2-4cb0-ab99-a0ac919cd2a5: Starting a new Raft election for term 1.
+2017-02-20T17:09:32.816491533 1139.069031s info: Table 68626a63-36d2-4cb0-ab99-a0ac919cd2a5: Added replica on this server.
+2017-02-20T17:09:32.866190384 1139.118730s info: Table 68626a63-36d2-4cb0-ab99-a0ac919cd2a5: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T17:09:34.094483964 1140.347024s info: Table 8e967190-4418-420d-9f0b-01a9d6df6527: Starting a new Raft election for term 1.
+2017-02-20T17:09:34.094724792 1140.347264s info: Table 8e967190-4418-420d-9f0b-01a9d6df6527: Added replica on this server.
+2017-02-20T17:09:34.149258652 1140.401798s info: Table 8e967190-4418-420d-9f0b-01a9d6df6527: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T17:09:35.098792389 1141.351332s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/68626a63-36d2-4cb0-ab99-a0ac919cd2a5
+2017-02-20T17:09:35.098798511 1141.351338s info: Table 68626a63-36d2-4cb0-ab99-a0ac919cd2a5: Deleted the table.
+2017-02-20T17:09:35.151551379 1141.404091s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/8e967190-4418-420d-9f0b-01a9d6df6527
+2017-02-20T17:09:35.151557181 1141.404096s info: Table 8e967190-4418-420d-9f0b-01a9d6df6527: Deleted the table.
+2017-02-20T17:09:39.398521425 1145.651061s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-20T17:09:39.398672360 1145.651212s notice: Shutting down client connections...
+2017-02-20T17:09:39.398771132 1145.651310s notice: All client connections closed.
+2017-02-20T17:09:39.398773504 1145.651313s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-20T17:09:39.413546463 1145.666086s notice: Storage engine shut down.
+2017-02-20T17:10:27.177984060 8.202054s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-20T17:10:27.183896970 8.207964s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-20T17:10:27.184009042 8.208073s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-20T17:10:27.276939127 8.301005s info: Automatically using cache size of 1768 MB
+2017-02-20T17:10:27.278933930 8.302998s notice: Listening for intracluster connections on port 29015
+2017-02-20T17:10:27.280617143 8.304681s notice: Listening for client driver connections on port 28015
+2017-02-20T17:10:27.280814472 8.304878s notice: Listening for administrative HTTP connections on port 8080
+2017-02-20T17:10:27.280816717 8.304880s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T17:10:27.280818648 8.304882s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T17:10:27.280821807 8.304886s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-20T17:10:27.280827045 8.304891s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-20T17:10:27.280831074 8.304895s notice: Server ready, "archer_kvj" d38d48d3-054e-4e3a-a195-47053634b560
+2017-02-20T17:10:31.296020019 12.320084s info: Table 3128f092-c2b7-476c-bf34-722f2f885c04: Starting a new Raft election for term 1.
+2017-02-20T17:10:31.296332093 12.320396s info: Table 3128f092-c2b7-476c-bf34-722f2f885c04: Added replica on this server.
+2017-02-20T17:10:31.353458799 12.377523s info: Table 3128f092-c2b7-476c-bf34-722f2f885c04: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T17:10:32.574128692 13.598193s info: Table 6066ca32-c374-4b29-ba9a-e21d5496955e: Starting a new Raft election for term 1.
+2017-02-20T17:10:32.574391863 13.598456s info: Table 6066ca32-c374-4b29-ba9a-e21d5496955e: Added replica on this server.
+2017-02-20T17:10:32.628218670 13.652283s info: Table 6066ca32-c374-4b29-ba9a-e21d5496955e: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-20T17:10:33.576145316 14.600210s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/3128f092-c2b7-476c-bf34-722f2f885c04
+2017-02-20T17:10:33.576152578 14.600216s info: Table 3128f092-c2b7-476c-bf34-722f2f885c04: Deleted the table.
+2017-02-20T17:10:33.630411257 14.654475s notice: Removing file /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/6066ca32-c374-4b29-ba9a-e21d5496955e
+2017-02-20T17:10:33.630417514 14.654481s info: Table 6066ca32-c374-4b29-ba9a-e21d5496955e: Deleted the table.
+2017-02-20T17:11:04.253921426 45.277986s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-20T17:11:04.254069883 45.278134s notice: Shutting down client connections...
+2017-02-20T17:11:04.254732567 45.278797s notice: All client connections closed.
+2017-02-20T17:11:04.254740912 45.278805s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-20T17:11:04.255131585 45.279196s notice: Storage engine shut down.
