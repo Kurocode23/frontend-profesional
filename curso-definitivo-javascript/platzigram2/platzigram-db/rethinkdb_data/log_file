@@ -442,3 +442,8 @@
 2017-02-20T23:46:22.282066000 3724.097123s info: Table 37d0b7dd-ed53-4495-8b1d-55b8f572da48: Deleted the table.
 2017-02-20T23:46:22.320836000 3724.135894s notice: Removing file /Users/alanaliaga/Documents/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data/6c89a803-dba5-4e0d-9fa8-90675fbc9305
 2017-02-20T23:46:22.320847000 3724.135904s info: Table 6c89a803-dba5-4e0d-9fa8-90675fbc9305: Deleted the table.
+2017-02-20T23:46:52.685807000 3754.500209s notice: Server got SIGINT from pid 27221, uid 501; shutting down...
+2017-02-20T23:46:52.686496000 3754.500899s notice: Shutting down client connections...
+2017-02-20T23:46:52.687018000 3754.501421s notice: All client connections closed.
+2017-02-20T23:46:52.687022000 3754.501424s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-20T23:46:52.687551000 3754.501953s notice: Storage engine shut down.
