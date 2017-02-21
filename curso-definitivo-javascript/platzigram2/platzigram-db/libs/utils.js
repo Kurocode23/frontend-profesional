@@ -1,7 +1,11 @@
 'use strict'
 
+const crypto = require('crypto')
+
 const utils = {
-  extractTags
+  extractTags,
+  encrypt,
+  normalize
 }
 
 function extractTags (text) {
@@ -20,6 +24,12 @@ function extractTags (text) {
   })
 
   return matches
+}
+
+function encrypt (password) {
+  var shasum = crypto.createHash('sha256')
+  shasum.update(password)
+  return shasum.digest('hex')
 }
 
 function normalize (text) {
