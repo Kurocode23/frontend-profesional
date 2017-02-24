@@ -1,5 +1,6 @@
 'use strict'
 
 export default {
-  db: {}
+  db: {},
+  secret: process.env.PLATZIGRAM_SECRET || 'platzi' // No usar defaults
 }
