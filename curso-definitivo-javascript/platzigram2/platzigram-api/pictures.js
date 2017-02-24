@@ -31,6 +31,15 @@ hash.set('GET /:id', async function getPicture (req, res, params) {
   send(res, 200, image)
 })
 
+hash.set('GET /tag/:tag', async function byTag (req, res, params) {
+  let tag = params.tag
+  await db.connect()
+  let images = await db.getImagesByTag(tag)
+  await db.disconnect()
+
+  send(res, 200, images)
+})
+
 hash.set('POST /', async function postPicture (req, res, params) {
   let image = await json(req)
   await db.connect()
