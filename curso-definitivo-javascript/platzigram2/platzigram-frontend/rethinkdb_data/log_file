@@ -19,3 +19,48 @@
 2017-02-19T22:26:25.207975000 1.473707s notice: All client connections closed.
 2017-02-19T22:26:25.207981000 1.473713s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2017-02-19T22:26:25.209467000 1.475199s notice: Storage engine shut down.
+2017-02-25T18:15:15.863885224 10.500295s notice: Recursively removing directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-frontend/rethinkdb_data/tmp
+2017-02-25T18:15:15.924969994 10.561383s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-25T18:15:15.928862136 10.565274s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-25T18:15:15.928942461 10.565352s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-frontend/rethinkdb_data
+2017-02-25T18:15:16.094056518 10.730467s info: Automatically using cache size of 2287 MB
+2017-02-25T18:15:16.095511463 10.731921s notice: Listening for intracluster connections on port 29015
+2017-02-25T18:15:16.111770585 10.748180s notice: Listening for client driver connections on port 28015
+2017-02-25T18:15:16.111915529 10.748325s notice: Listening for administrative HTTP connections on port 8080
+2017-02-25T18:15:16.111916291 10.748325s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:15:16.111917716 10.748327s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:15:16.111920444 10.748329s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:15:16.111923607 10.748332s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-25T18:15:16.111926776 10.748336s notice: Server ready, "MacBook_Pro_de_Alan_local_oa8" 4ee617c5-0c5d-493d-8d8b-d61e580bfe49
+2017-02-25T18:18:47.965861430 222.602271s info: Table f91456d2-180c-4c7b-a5dc-c5bb0fa3048e: Starting a new Raft election for term 1.
+2017-02-25T18:18:47.989353481 222.625763s info: Table f91456d2-180c-4c7b-a5dc-c5bb0fa3048e: Added replica on this server.
+2017-02-25T18:18:48.079880171 222.716290s info: Table f91456d2-180c-4c7b-a5dc-c5bb0fa3048e: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-25T18:18:53.544804916 228.181214s info: Table eadb7a95-1ab8-47bc-9f61-4d772578308c: Starting a new Raft election for term 1.
+2017-02-25T18:18:53.546059148 228.182468s info: Table eadb7a95-1ab8-47bc-9f61-4d772578308c: Added replica on this server.
+2017-02-25T18:18:53.597164757 228.233574s info: Table eadb7a95-1ab8-47bc-9f61-4d772578308c: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-25T18:20:11.466749645 306.103159s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-25T18:20:11.467526004 306.103935s notice: Shutting down client connections...
+2017-02-25T18:20:11.467607621 306.104017s notice: All client connections closed.
+2017-02-25T18:20:11.467609594 306.104018s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-25T18:20:11.471398932 306.107808s notice: Storage engine shut down.
+2017-02-25T18:20:29.442919922 12.652176s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-25T18:20:29.446529584 12.655794s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-25T18:20:29.446635648 12.655889s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-frontend/rethinkdb_data
+2017-02-25T18:20:29.528668360 12.737923s info: Automatically using cache size of 2385 MB
+2017-02-25T18:20:29.530289081 12.739542s notice: Listening for intracluster connections on port 29015
+2017-02-25T18:20:29.589286188 12.798540s notice: Listening for client driver connections on port 28015
+2017-02-25T18:20:29.589427031 12.798681s notice: Listening for administrative HTTP connections on port 8080
+2017-02-25T18:20:29.589445396 12.798699s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:20:29.589449660 12.798703s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:20:29.589455124 12.798708s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:20:29.589458753 12.798712s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-25T18:20:29.589462407 12.798715s notice: Server ready, "MacBook_Pro_de_Alan_local_oa8" 4ee617c5-0c5d-493d-8d8b-d61e580bfe49
+2017-02-25T18:20:30.715926444 13.925180s info: Table f91456d2-180c-4c7b-a5dc-c5bb0fa3048e: Starting a new Raft election for term 2.
+2017-02-25T18:20:30.764818410 13.974072s info: Table f91456d2-180c-4c7b-a5dc-c5bb0fa3048e: This server is Raft leader for term 2. Latest log index is 3.
+2017-02-25T18:20:30.926708544 14.135962s info: Table eadb7a95-1ab8-47bc-9f61-4d772578308c: Starting a new Raft election for term 2.
+2017-02-25T18:20:30.972059707 14.181313s info: Table eadb7a95-1ab8-47bc-9f61-4d772578308c: This server is Raft leader for term 2. Latest log index is 3.
+2017-02-25T18:26:54.968012171 398.177266s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-25T18:26:54.968206769 398.177460s notice: Shutting down client connections...
+2017-02-25T18:26:54.968265910 398.177519s notice: All client connections closed.
+2017-02-25T18:26:54.968268071 398.177521s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-25T18:26:54.971862931 398.181116s notice: Storage engine shut down.

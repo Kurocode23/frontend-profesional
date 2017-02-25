@@ -2099,3 +2099,26 @@
 2017-02-21T18:57:06.580164433 1425.644478s notice: All client connections closed.
 2017-02-21T18:57:06.580169017 1425.644481s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2017-02-21T18:57:06.581237492 1425.645550s notice: Storage engine shut down.
+2017-02-25T18:27:10.859092942 8.872996s notice: Running rethinkdb 2.3.5 (GCC 4.8.4)...
+2017-02-25T18:27:10.893024020 8.906927s notice: Running on Linux 4.4.0-59-generic x86_64
+2017-02-25T18:27:10.893093787 8.906994s notice: Loading data from directory /home/archer/Documentos/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-25T18:27:11.010195726 9.024097s info: Automatically using cache size of 1496 MB
+2017-02-25T18:27:11.012041330 9.025942s notice: Listening for intracluster connections on port 29015
+2017-02-25T18:27:11.012916672 9.026817s notice: Listening for client driver connections on port 28015
+2017-02-25T18:27:11.013028342 9.026929s notice: Listening for administrative HTTP connections on port 8080
+2017-02-25T18:27:11.013028852 9.026929s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:27:11.013031518 9.026932s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:27:11.013032722 9.026933s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-25T18:27:11.013034649 9.026935s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-25T18:27:11.013037005 9.026937s notice: Server ready, "archer_kvj" d38d48d3-054e-4e3a-a195-47053634b560
+2017-02-25T18:28:13.313087031 71.326988s info: Table 50731e56-6d76-4827-93f1-39dde1adf27f: Starting a new Raft election for term 1.
+2017-02-25T18:28:13.313566520 71.327468s info: Table 50731e56-6d76-4827-93f1-39dde1adf27f: Added replica on this server.
+2017-02-25T18:28:13.332314861 71.346216s info: Table 50731e56-6d76-4827-93f1-39dde1adf27f: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-25T18:28:19.631035617 77.644937s info: Table a272dee6-d2cb-410c-8aee-daed77ebd7a5: Starting a new Raft election for term 1.
+2017-02-25T18:28:19.631649847 77.645551s info: Table a272dee6-d2cb-410c-8aee-daed77ebd7a5: Added replica on this server.
+2017-02-25T18:28:19.648581508 77.662482s info: Table a272dee6-d2cb-410c-8aee-daed77ebd7a5: This server is Raft leader for term 1. Latest log index is 0.
+2017-02-25T18:29:33.006739486 151.020641s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-25T18:29:33.006898835 151.020800s notice: Shutting down client connections...
+2017-02-25T18:29:33.006981282 151.020882s notice: All client connections closed.
+2017-02-25T18:29:33.006983421 151.020884s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-25T18:29:33.010572867 151.024474s notice: Storage engine shut down.
