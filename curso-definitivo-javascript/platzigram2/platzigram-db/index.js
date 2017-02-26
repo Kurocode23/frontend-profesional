@@ -1,3 +1,1 @@
-'use strict'
-
-module.exports = require('./libs/db')
+module.exports = require('./lib/db')

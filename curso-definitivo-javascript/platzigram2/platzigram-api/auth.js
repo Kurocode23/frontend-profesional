@@ -21,8 +21,10 @@ hash.set('POST /', async function authenticate (req, res, params) {
   let credentials = await json(req)
 
   await db.connect()
-  let auth = await db.authenticate(credentials.username, credentials.pasword)
+  let auth = await db.authenticate(credentials.username, credentials.password)
   await db.disconnect()
+
+  console.log(`Auth: ${auth}`)
 
   if (!auth) {
     return send(res, 401, { error: 'invalid credentials' })
@@ -31,6 +33,8 @@ hash.set('POST /', async function authenticate (req, res, params) {
   let token = await utils.signToken({
     username: credentials.username
   }, config.secret)
+
+  console.log(`Token: ${token}`)
 
   send(res, 200, token)
 })

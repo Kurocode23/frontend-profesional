@@ -72,7 +72,7 @@ app.get('/signup', function (req, res) {
   res.render('index', { title: 'Platzigram - Signup' });
 })
 
-app.post('/signup', logSomething, function (req, res) {
+app.post('/signup', function (req, res) {
   var user = req.body; //gracias a body-parser nos llega procesado
   client.saveUser(user, function (err, usr) {
     if (err) return res.status(500).send(err.message);
@@ -85,15 +85,10 @@ app.get('/signin', function (req, res) {
   res.render('index', { title: 'Platzigram - Signin' });
 })
 
-app.post('/login', logSomething, passport.authenticate('local', {
+app.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/signin'
 }))
-
-function logSomething (req, res, next) {
-  console.log(req.body)
-  next()
-}
 
 function ensureAuth (req, res, next) {
   if (req.isAuthenticated()) {
