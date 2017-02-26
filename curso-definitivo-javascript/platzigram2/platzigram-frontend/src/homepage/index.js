@@ -3,10 +3,14 @@ var empty = require('empty-element');
 var template = require('./template');
 var title = require('title');
 var request = require('superagent');
+
+var utils = require('./../utils')
 var header = require('../header');
 var axios = require('axios');
 
-page('/', header, asyncLoad, function (ctx, next) {
+
+
+page('/', utils.loadAuth, header, asyncLoad, function (ctx, next) {
   title('Platzigram');
   var main = document.getElementById('main-container');
 

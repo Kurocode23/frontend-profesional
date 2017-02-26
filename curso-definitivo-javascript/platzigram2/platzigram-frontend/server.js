@@ -14,6 +14,8 @@ var platzigram = require('platzigram-client')
 var config   = require('./config')
 var auth = require('./auth')
 
+var PORT = process.env.PORT || 5050;
+
 var client = platzigram.createClient(config.client);
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -61,6 +63,7 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 passport.use(auth.localStrategy);
+passport.use(auth.facebookStrategy);
 passport.deserializeUser(auth.deserializeUser);
 passport.serializeUser(auth.serializeUser);
 
@@ -86,6 +89,20 @@ app.get('/signin', function (req, res) {
 })
 
 app.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+}))
+
+app.get('/logout', function (req, res) {
+  req.logout()
+  res.redirect('/')
+})
+
+app.get('/auth/facebook', passport.authenticate('facebook', {
+  scope: 'email'
+}))
+
+app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/signin'
 }))
@@ -180,6 +197,14 @@ app.get('/api/user/:username', function (req, res) {
   res.send(user)
 })
 
+app.get('/whoami', function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.json(req.user)
+  }
+
+  res.send({ auth: false })
+})
+
 app.get('/:username', function (req, res) {
   res.render('index', { title: `Platzigram - {req.params.username}` })
 })
@@ -188,8 +213,8 @@ app.get('/:username/:id', function (req, res) {
   res.render('index', { title: `Platzigram - {req.params.username}` })
 })
 
-app.listen(3000, function (err) {
+app.listen(PORT, function (err) {
   if (err) return console.log('Hubo un error'), process.exit(1);
 
-  console.log('Platzigram escuchando en el puerto 3000');
+  console.log(`Platzigram escuchando en el puerto ${PORT}`);
 })
