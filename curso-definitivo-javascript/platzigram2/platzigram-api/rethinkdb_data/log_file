@@ -1,0 +1,22 @@
+2017-02-25T22:23:01.634493000 0.319759s notice: Recursively removing directory /Users/alanaliaga/Documents/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-api/rethinkdb_data/tmp
+2017-02-25T22:23:01.636191000 0.321460s notice: Initializing directory /Users/alanaliaga/Documents/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-api/rethinkdb_data
+2017-02-25T22:23:01.636273000 0.321538s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/alanaliaga/Documents/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-api/rethinkdb_data' did not already exist or is empty.)
+2017-02-25T22:23:01.636307000 0.321572s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2017-02-25T22:23:01.647944000 0.333212s notice: Running on Darwin 15.6.0 x86_64
+2017-02-25T22:23:01.648108000 0.333373s notice: Loading data from directory /Users/alanaliaga/Documents/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-api/rethinkdb_data
+2017-02-25T22:23:01.765743000 0.451008s info: Automatically using cache size of 100 MB
+2017-02-25T22:23:01.765754000 0.451019s warn: Cache size does not leave much memory for server and query overhead (available memory: 898 MB).
+2017-02-25T22:23:01.765760000 0.451024s warn: Cache size is very low and may impact performance.
+2017-02-25T22:23:01.767784000 0.453049s notice: Listening for intracluster connections on port 29015
+2017-02-25T22:23:01.769458000 0.454723s notice: Listening for client driver connections on port 28015
+2017-02-25T22:23:01.769586000 0.454851s notice: Listening for administrative HTTP connections on port 8080
+2017-02-25T22:23:01.769590000 0.454854s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-02-25T22:23:01.769595000 0.454860s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-02-25T22:23:01.769597000 0.454861s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-02-25T22:23:01.769601000 0.454865s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-25T22:23:01.769604000 0.454869s notice: Server ready, "MacBook_Pro_de_Alan_local_z98" 687fc233-0e83-46d5-aadf-975b3ab97672
+2017-02-25T22:23:31.437614000 30.122029s notice: Server got SIGINT from pid 68846, uid 501; shutting down...
+2017-02-25T22:23:31.437983000 30.122398s notice: Shutting down client connections...
+2017-02-25T22:23:31.438227000 30.122642s notice: All client connections closed.
+2017-02-25T22:23:31.438234000 30.122649s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-25T22:23:31.440622000 30.125037s notice: Storage engine shut down.

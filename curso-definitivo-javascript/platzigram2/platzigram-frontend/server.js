@@ -11,10 +11,10 @@ var passport = require('passport')
 
 var platzigram = require('platzigram-client')
 
-
 var config   = require('./config')
-var client = platzigram.createClient(config.client);
+var auth = require('./auth')
 
+var client = platzigram.createClient(config.client);
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './uploads')
@@ -47,22 +47,22 @@ var upload = multer({ storage: storage }).single('picture');
 
 var app = express();
 
-app.set(bodyParser.json());
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
 app.use(expressSession({
   secret: config.secret,
   resave: false,
-  saveUnitialized: false
-}));
-
+  saveUninitialized: false
+}))
 app.use(passport.initialize())
 app.use(passport.session())
-
 app.set('view engine', 'pug');
-
 app.use(express.static('public'));
+
+passport.use(auth.localStrategy);
+passport.deserializeUser(auth.deserializeUser);
+passport.serializeUser(auth.serializeUser);
 
 app.get('/', function (req, res) {
   res.render('index', { title: 'Platzigram' });
@@ -72,18 +72,36 @@ app.get('/signup', function (req, res) {
   res.render('index', { title: 'Platzigram - Signup' });
 })
 
-app.post('/signup', function (req, res) {
+app.post('/signup', logSomething, function (req, res) {
   var user = req.body; //gracias a body-parser nos llega procesado
   client.saveUser(user, function (err, usr) {
     if (err) return res.status(500).send(err.message);
 
-    res.redirect('/signin')
+    res.redirect('/signin');
   })
 })
 
 app.get('/signin', function (req, res) {
   res.render('index', { title: 'Platzigram - Signin' });
 })
+
+app.post('/login', logSomething, passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+}))
+
+function logSomething (req, res, next) {
+  console.log(req.body)
+  next()
+}
+
+function ensureAuth (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.status(401).send({ error: 'not authenticated' })
+}
 
 app.get('/api/pictures', function (req, res, next) {
   var pictures = [
@@ -112,7 +130,7 @@ app.get('/api/pictures', function (req, res, next) {
   res.send(pictures);  
 });
 
-app.post('/api/pictures', function (req, res) {
+app.post('/api/pictures', ensureAuth, function (req, res) {
   upload(req, res, function (err) {
     if (err) {
       return res.send(500, "Error uploading file");

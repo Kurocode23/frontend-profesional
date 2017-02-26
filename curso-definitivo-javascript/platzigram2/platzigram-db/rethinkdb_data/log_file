@@ -2122,3 +2122,26 @@
 2017-02-25T18:29:33.006981282 151.020882s notice: All client connections closed.
 2017-02-25T18:29:33.006983421 151.020884s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2017-02-25T18:29:33.010572867 151.024474s notice: Storage engine shut down.
+2017-02-25T22:04:40.622216000 0.336061s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2017-02-25T22:04:40.627620000 0.341463s notice: Running on Darwin 15.6.0 x86_64
+2017-02-25T22:04:40.627664000 0.341506s notice: Loading data from directory /Users/alanaliaga/Documents/Platzi/2017/frontend-profesional/curso-definitivo-javascript/platzigram2/platzigram-db/rethinkdb_data
+2017-02-25T22:04:40.671167000 0.385009s info: Automatically using cache size of 100 MB
+2017-02-25T22:04:40.671189000 0.385030s warn: Cache size does not leave much memory for server and query overhead (available memory: 960 MB).
+2017-02-25T22:04:40.671198000 0.385039s warn: Cache size is very low and may impact performance.
+2017-02-25T22:04:40.673429000 0.387270s notice: Listening for intracluster connections on port 29015
+2017-02-25T22:04:40.697385000 0.411226s notice: Listening for client driver connections on port 28015
+2017-02-25T22:04:40.697753000 0.411594s notice: Listening for administrative HTTP connections on port 8080
+2017-02-25T22:04:40.697756000 0.411598s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-02-25T22:04:40.697809000 0.411650s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-02-25T22:04:40.697811000 0.411652s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-02-25T22:04:40.697812000 0.411654s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-25T22:04:40.697814000 0.411655s notice: Server ready, "archer_kvj" d38d48d3-054e-4e3a-a195-47053634b560
+2017-02-25T22:04:41.698248000 1.412047s info: Table 50731e56-6d76-4827-93f1-39dde1adf27f: Starting a new Raft election for term 2.
+2017-02-25T22:04:41.720737000 1.434536s info: Table 50731e56-6d76-4827-93f1-39dde1adf27f: This server is Raft leader for term 2. Latest log index is 3.
+2017-02-25T22:04:42.532026000 2.245783s info: Table a272dee6-d2cb-410c-8aee-daed77ebd7a5: Starting a new Raft election for term 2.
+2017-02-25T22:04:42.553787000 2.267544s info: Table a272dee6-d2cb-410c-8aee-daed77ebd7a5: This server is Raft leader for term 2. Latest log index is 3.
+2017-02-25T22:07:08.588988000 148.298622s notice: Server got SIGINT from pid 68846, uid 501; shutting down...
+2017-02-25T22:07:08.589511000 148.299146s notice: Shutting down client connections...
+2017-02-25T22:07:08.590083000 148.299717s notice: All client connections closed.
+2017-02-25T22:07:08.590092000 148.299725s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-25T22:07:08.597714000 148.307348s notice: Storage engine shut down.
