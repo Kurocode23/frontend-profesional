@@ -1,12 +1,12 @@
 export default {
   getImage () {
     return {
-      id: 'c43313a5-8a09-4678-8109-de3b7e87f246',
-      publicId: '5YdPY8WZ0ytxghBMWnBPoy',
+      id: '6a238b19-3ee3-4d5c-acb5-944a3c1fb407',
+      publicId: '3ehqEZvwZByc6hjzgEZU5p',
       userId: 'platzigram',
       liked: false,
       likes: 0,
-      src: 'http://platzigram.test/5YdPY8WZ0ytxghBMWnBPoy.jpg',
+      src: 'http://platzigram.test/3ehqEZvwZByc6hjzgEZU5p.jpg',
       description: '#awesome',
       tags: [ 'awesome' ],
       createdAt: new Date().toString()
@@ -30,7 +30,7 @@ export default {
 
   getUser () {
     return {
-      id: 'a68dcf7b-8c22-4399-84a3-51dd7d1ecb9f',
+      id: 'f632db90-d6bf-46f0-9fb1-4eb6912cbdb4',
       name: 'Freddy Vega',
       username: 'freddier',
       email: 'f@platzi.test',

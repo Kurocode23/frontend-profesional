@@ -1,12 +1,13 @@
+'use strict'
+
 import test from 'ava'
 import micro from 'micro'
 import listen from 'test-listen'
 import request from 'request-promise'
-
-import utils from './../lib/utils'
-import config from './../config'
+import fixtures from './fixtures/'
 import pictures from '../pictures'
-import fixtures from './fixtures'
+import utils from '../lib/utils'
+import config from '../config'
 
 test.beforeEach(async t => {
   let srv = micro(pictures)
@@ -16,7 +17,6 @@ test.beforeEach(async t => {
 test('GET /:id', async t => {
   let image = fixtures.getImage()
   let url = t.context.url
-
   let body = await request({ uri: `${url}/${image.publicId}`, json: true })
   t.deepEqual(body, image)
 })
@@ -33,6 +33,29 @@ test('no token POST /', async t => {
       description: image.description,
       src: image.src,
       userId: image.userId
+    },
+    resolveWithFullResponse: true
+  }
+
+  t.throws(request(options), /invalid token/)
+})
+
+test('invalid token POST /', async t => {
+  let image = fixtures.getImage()
+  let url = t.context.url
+  let token = await utils.signToken({ userId: 'hacky' }, config.secret)
+
+  let options = {
+    method: 'POST',
+    uri: url,
+    json: true,
+    body: {
+      description: image.description,
+      src: image.src,
+      userId: image.userId
+    },
+    headers: {
+      'Authorization': `Bearer ${token}`
     },
     resolveWithFullResponse: true
   }
@@ -66,30 +89,6 @@ test('secure POST /', async t => {
   t.deepEqual(response.body, image)
 })
 
-test('invalid token POST /', async t => {
-  let image = fixtures.getImage()
-  let url = t.context.url
-  let token = await utils.signToken({ userId: 'hacky' }, config.secret)
-
-  let options = {
-    method: 'POST',
-    uri: url,
-    json: true,
-
-    body: {
-      description: image.description,
-      src: image.src,
-      userId: image.userId
-    },
-    headers: {
-      'Authorization': `Bearer ${token}`
-    },
-    resolveWithFullResponse: true
-  }
-
-  t.throws(request(options), /invalid token/)
-})
-
 test('POST /:id/like', async t => {
   let image = fixtures.getImage()
   let url = t.context.url
@@ -101,9 +100,7 @@ test('POST /:id/like', async t => {
   }
 
   let body = await request(options)
-
   let imageNew = JSON.parse(JSON.stringify(image))
-
   imageNew.liked = true
   imageNew.likes = 1
 
@@ -126,8 +123,8 @@ test('GET /list', async t => {
 })
 
 test('GET /tag/:tag', async t => {
-  let url = t.context.url
   let images = fixtures.getImagesByTag()
+  let url = t.context.url
 
   let options = {
     method: 'GET',
@@ -136,5 +133,6 @@ test('GET /tag/:tag', async t => {
   }
 
   let body = await request(options)
+
   t.deepEqual(body, images)
 })

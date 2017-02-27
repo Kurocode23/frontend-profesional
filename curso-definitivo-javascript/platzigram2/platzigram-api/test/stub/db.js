@@ -1,10 +1,9 @@
 'use strict'
 
-import fixtures from './../fixtures'
+import fixtures from '../fixtures/'
 
 export default class Db {
   connect () {
-    // resolvemos una promesa a verdadero para volver este metodo asincrono
     return Promise.resolve(true)
   }
 
@@ -16,23 +15,27 @@ export default class Db {
     return Promise.resolve(fixtures.getImage())
   }
 
-  saveImage (image) {
-    return Promise.resolve(fixtures.getImage())
-  }
-
-  likeImage (id) {
-    let image = fixtures.getImage()
-    image.liked = true
-    image.likes = 1
-    return Promise.resolve(image)
-  }
-
   getImages () {
     return Promise.resolve(fixtures.getImages())
   }
 
-  getImagesByTag (tag) {
+  getImagesByTag () {
     return Promise.resolve(fixtures.getImagesByTag())
+  }
+
+  getImagesByUser (username) {
+    return Promise.resolve(fixtures.getImages())
+  }
+
+  saveImage (image) {
+    return Promise.resolve(fixtures.getImage())
+  }
+
+  likeImage (image) {
+    image = fixtures.getImage()
+    image.liked = true
+    image.likes = 1
+    return Promise.resolve(image)
   }
 
   saveUser (user) {
@@ -43,7 +46,7 @@ export default class Db {
     return Promise.resolve(fixtures.getUser())
   }
 
-  authenticate () {
+  authenticate (username, password) {
     return Promise.resolve(true)
   }
 }

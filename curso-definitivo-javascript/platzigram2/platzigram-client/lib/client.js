@@ -69,28 +69,28 @@ class Client {
   }
 
   getUser (username, callback) {
-    let options = {
+    let opts = {
       method: 'GET',
       uri: `${this.options.endpoints.users}/${username}`,
       json: true
     }
 
-    return Promise.resolve(request(options)).asCallback(callback)
+    return Promise.resolve(request(opts)).asCallback(callback)
   }
 
   saveUser (user, callback) {
-    let options = {
+    let opts = {
       method: 'POST',
       uri: `${this.options.endpoints.users}/`,
       body: user,
       json: true
     }
 
-    return Promise.resolve(request(options)).asCallback(callback)
+    return Promise.resolve(request(opts)).asCallback(callback)
   }
 
   auth (username, password, callback) {
-    let options = {
+    let opts = {
       method: 'POST',
       uri: `${this.options.endpoints.auth}/`,
       body: {
@@ -100,7 +100,7 @@ class Client {
       json: true
     }
 
-    return Promise.resolve(request(options)).asCallback(callback)
+    return Promise.resolve(request(opts)).asCallback(callback)
   }
 }
 

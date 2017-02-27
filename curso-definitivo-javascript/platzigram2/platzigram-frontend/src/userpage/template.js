@@ -12,8 +12,8 @@ export default function userPageTemplate (user) {
               <img class="responsive-img circle" src="${user.avatar}" />
             </div>
             <div class="col s12 m10 offset-m1 l6 left-align">
-              <h2 class="hide-on-large-only center-align">${user.username}</h2>
-              <h2 class="hide-on-med-and-down left-align">${user.username}</h2>
+              <h2 class="hide-on-large-only center-align">${user.name}</h2>
+              <h2 class="hide-on-med-and-down left-align">${user.name}</h2>
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@ export default function userPageTemplate (user) {
                   <a href="/${user.username}/${picture.id}" class="picture-container">
                     <img class="picture" src="${picture.src}" />
                     <div class="likes">
-                      <i class="fa fa-heart"></i> ${picture.likes}
+                      <i class="fa fa-heart"></i> ${picture.likes || 0}
                     </div>
                   </a>
 

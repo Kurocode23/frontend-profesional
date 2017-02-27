@@ -41,11 +41,12 @@ test('getPicture', async t => {
 
   let result = await client.getPicture(image.publicId)
 
-  t.deepEqual(result, image)
+  t.deepEqual(image, result)
 })
 
 test('savePicture', async t => {
   const client = t.context.client
+
   let token = 'xxx-xxx-xxx'
   let image = fixtures.getImage()
   let newImage = {
@@ -111,10 +112,24 @@ test('listPicturesByTag', async t => {
   t.deepEqual(result, images)
 })
 
-test('saveUser', async t => {
+test('getUser', async t => {
   const client = t.context.client
+
   let user = fixtures.getUser()
 
+  nock(options.endpoints.users)
+    .get(`/${user.username}`)
+    .reply(200, user)
+
+  let result = await client.getUser(user.username)
+
+  t.deepEqual(result, user)
+})
+
+test('saveUser', async t => {
+  const client = t.context.client
+
+  let user = fixtures.getUser()
   let newUser = {
     username: user.username,
     name: user.name,
@@ -131,21 +146,9 @@ test('saveUser', async t => {
   t.deepEqual(result, user)
 })
 
-test('getUser', async t => {
-  const client = t.context.client
-  let user = fixtures.getUser()
-
-  nock(options.endpoints.users)
-    .get(`/${user.username}`)
-    .reply(200, user)
-
-  let result = await client.getUser(user.username)
-
-  t.deepEqual(result, user)
-})
-
 test('auth', async t => {
   const client = t.context.client
+
   let credentials = {
     username: 'freddier',
     password: 'pl4tzi'
@@ -161,4 +164,3 @@ test('auth', async t => {
 
   t.deepEqual(result, token)
 })
-

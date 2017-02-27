@@ -26,7 +26,7 @@ page('/:username/:id',  header, loadUser, function (ctx, next) {
 
 async function loadUser (ctx, next) {
   try {
-    ctx.user = await fetch('/api/user/${ctx.params.username}').then(res => res.json())
+    ctx.user = await fetch(`/api/user/${ctx.params.username}`).then(res => res.json())
     next()
   } catch (err) {
     console.log(err)
