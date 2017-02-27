@@ -1,0 +1,22 @@
+{
+  "name": "platzigram-we",
+  "version": "1.0.0",
+  "description": "Platzigram Realtime Backend",
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "scripts": {
+    "lint": "standard --fix",
+    "start": "node server.js"
+  },
+  "author": "Kurocode <alanaliaga23@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "rethinkdb": "^2.3.3",
+    "socket.io": "^1.7.3"
+  }
+}

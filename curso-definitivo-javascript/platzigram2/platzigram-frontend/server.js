@@ -19,7 +19,7 @@ var PORT = process.env.PORT || 5050;
 var client = platzigram.createClient(config.client);
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads')
+    cb(null, './public')
   },
   filename: function (req, file, cb) {
     cb(null, +Date.now() + '.' + ext(file.originalname))
@@ -132,7 +132,8 @@ app.post('/api/pictures', ensureAuth, function (req, res) {
     var user = req.user
     var token = req.user.token
     var username = req.user.username
-    var src = req.file.path
+    // var src = req.file.path
+    var src = req.file.filename
 
     client.savePicture({
       src: src,
@@ -145,6 +146,7 @@ app.post('/api/pictures', ensureAuth, function (req, res) {
     }, token, function (err, img) {
       if (err) return res.status(500).send(err.message)
       
+      // res.send(`File uploaded: ${req.file.path}`);
       res.send(`File uploaded: ${req.file.path}`);
     })
   })
