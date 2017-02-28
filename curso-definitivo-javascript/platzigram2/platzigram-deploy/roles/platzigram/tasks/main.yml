@@ -1,0 +1,19 @@
+ ---
+  - include: deps.yml
+  - name: "Restarting RethinkDB"
+    service:
+      name=rethinkdb
+      state=restarted
+  - name: "Copying Projects"
+    copy:
+      src="platzigram-db"
+      dest=/opt/
+      mode=u=r,g=r
+  - name: "Running npm install"
+    command: bash -c "npm install || npm install"
+      chdir="/opt/platzigram-db"
+      creates="/opt/platzigram-db/node_modules"
+  - name: "Setting up Database"
+    command: "node setup.js"
+      chdir="/opt/platzigram-db"
+  
