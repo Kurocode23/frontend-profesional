@@ -9,11 +9,16 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "author": "Kurocode <alanaliaga23@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianduque/platzigram-ws.git"
+  },
+  "author": "Julian Duque <julianduquej@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/julianduque/platzigram-ws/issues"
   },
+  "homepage": "https://github.com/julianduque/platzigram-ws#readme",
   "devDependencies": {
     "babel-eslint": "^6.0.4",
     "standard": "^7.1.2"
