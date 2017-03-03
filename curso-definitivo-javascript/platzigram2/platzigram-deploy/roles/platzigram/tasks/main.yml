@@ -14,6 +14,6 @@
       chdir="/opt/platzigram-db"
       creates="/opt/platzigram-db/node_modules"
   - name: "Setting up Database"
-    command: "node setup.js"
+    command: "bash -c node setup.js"
       chdir="/opt/platzigram-db"
   
