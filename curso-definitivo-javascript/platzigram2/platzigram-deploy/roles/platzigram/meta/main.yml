@@ -1,5 +1,5 @@
 ---
 dependencies:
-- { role: jdauphan.nginx }
+- { role: jdauphant.nginx }
 - { role: jacobwgillespie-ansible.rethinkdb }
 - { role: nodesource.node }
