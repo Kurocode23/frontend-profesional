@@ -15,24 +15,88 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js"></script>
   <script type="text/babel">
     function Hola (props) {
-      const name = props.name;
 
       return (
-        <h1 id="title">Hola { name }</h1>
+        <h1 id="title" onClick={ props.onClick } onMouseEnter={ props.onMouseEnter }>
+          Hola { props.name } {props.count}
+        </h1>
       )
     }
 
-    ReactDOM.render(
-      <Hola name="Platzi" />,
+    class MiComponente extends React.PureComponent {
+      constructor (props) {
+        super(props)
+
+        this.handleClick = this.handleClick.bind(this)
+
+        this.state = {
+          count: 0,
+        }
+      }
+
+      componentWillMount () {
+        console.log('El componente se va a montar')
+      }
+
+      componentDidMount () {
+        document.addEventListener('click', this.handleClick)
+      }
+
+      // componentWillReceiveProps (nextProps) {
+      //   if (nextProps.name !== this.props.name) {
+      //     this.setState({
+      //       count: this.state.count * 2
+      //     })
+      //   }
+      // }
+
+      shouldComponentUpdate (nextProps, nextState) {
+        if (nextState.count !== this.state.count) return true
+        return false
+      }
+
+      componentWillUpdate () {
+        console.log('el componente se va a actualizar')
+      }
+
+      componentDidUpdate () {
+        console.log('el componente se ha actualizado')
+      }
+
+      componentWillUnmount () {
+        document.removeEventListener('click', this.handleClick)
+      }
+
+      handleClick () {
+        this.setState({
+          count: this.state.count +1,
+        })
+      }
+
+      handleMouseEnter (e) {
+        console.log(e.target)
+      }
+
+      render () {
+        const name = this.props.name
+        return (
+          <Hola name={this.props.name} count={this.state.count} onClick={this.handleClick} onMouseEnter={ this.handleMouseEnter }/>
+        )
+      }
+    }
+
+    ReactDOM.render( 
+      <MiComponente name="Platzi" />,
       document.getElementById('app')
     )
 
-    setTimeout(() => {
-      ReactDOM.render(
-        <Hola name="Platzi!!!"/>,
-        document.getElementById('app')
-      )
-    }, 3000)
+    // Uncomment this to see componentWillReceiveProps
+    // setTimeout(() => {
+    //   ReactDOM.render( 
+    //     <MiComponente name="Platzi Cambio!!!" />,
+    //     document.getElementById('app')
+    //   )
+    // }, 5000)
   </script>
 </body>
 </html>
