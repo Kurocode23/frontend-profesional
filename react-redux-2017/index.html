@@ -14,20 +14,67 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js"></script>
   <script type="text/babel">
-    function Hola (props) {
 
+    function Counter (WrappedComponent) {
+      class CounterHOC extends React.Component {
+        constructor (props) {
+          super(props)
+
+          this.handleClick = this.handleClick.bind(this)
+
+          this.state = {
+            count: 0
+          }
+        }
+
+        handleClick () {
+          this.setState({
+            count: this.state.count + 1,
+          })
+        }
+
+        getChildContext () {
+          return {
+            count: this.state.count,
+          }
+        }
+
+        render () {
+          return (
+            <WrappedComponent
+              onClick={this.handleClick}
+              { ...this.props }
+            />
+          )
+        }
+      }
+
+      CounterHOC.childContextTypes = {
+        count: React.PropTypes.number
+      }
+
+      return CounterHOC
+    }
+
+    function Hola (props, context) {
+      debugger;      
       return (
         <h1 id="title" onClick={ props.onClick } onMouseEnter={ props.onMouseEnter }>
-          Hola { props.name } {props.count}
+          Hola { props.name } {context.count}
         </h1>
       )
     }
 
+
+    Hola.contextTypes = {
+      count: React.PropTypes.number
+    }
+
+    const HolaHOC = Counter(Hola)    
+
     class MiComponente extends React.PureComponent {
       constructor (props) {
         super(props)
-
-        this.handleClick = this.handleClick.bind(this)
 
         this.state = {
           count: 0,
@@ -67,10 +114,10 @@
         document.removeEventListener('click', this.handleClick)
       }
 
-      handleClick () {
-        this.setState({
-          count: this.state.count +1,
-        })
+      getChildContext () {
+        return {
+          count: this.state.count
+        }
       }
 
       handleMouseEnter (e) {
@@ -85,8 +132,28 @@
       }
     }
 
+    MiComponente.childContextTypes = {
+      count: React.PropTypes.number,
+    }
+
+    const Mixin = {
+      handleClick () {
+        console.log('clickeado')
+      }
+    }
+
+    var Componente = React.createClass ({
+      mixins: [
+        Mixin,
+      ],
+
+      render () {
+        return <div onClick={this.handleClick}>Hola</div>
+      }
+    })
+
     ReactDOM.render( 
-      <MiComponente name="Platzi" />,
+      <Componente />,
       document.getElementById('app')
     )
 
