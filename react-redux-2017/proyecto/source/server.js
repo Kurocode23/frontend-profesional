@@ -2,10 +2,11 @@
 
 import http from 'http'
 import React from 'react'
-import { renderToString } from 'react-dom/server'
+import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import { ServerRouter, createServerRenderContext } from 'react-router'
 
 import Pages from './pages/containers/Page.jsx'
+import Layout from './pages/components/Layout.jsx'
 
 function requestHandler (req, res) {
   const context = createServerRenderContext()
@@ -38,7 +39,14 @@ function requestHandler (req, res) {
     )
   }
 
-  res.write(html)
+  res.write(
+    renderToStaticMarkup(
+      <Layout
+        title="Aplicacion"
+        content={html}>
+      </Layout>
+    )
+  )
   res.end()
 }
 
