@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import api from './../../api'
 
 class Post extends Component {
@@ -7,35 +8,39 @@ class Post extends Component {
 
     this.state = {
       loading: true,
-      user: {},
-      comments: [],
+      user: props.user || null,
+      comments: props.comments || null,
     }
   }
 
   async componentDidMount () {
+    if (!!this.state.user && !!this.state.comments) return this.setState ({ loading: false })
+
     const [user, comments] = await Promise.all([
-      api.user.getSingle(this.props.userId),
-      api.post.getComments(this.props.id)
+      !this.state.user ? api.user.getSingle(this.props.userId) : Promise.resolve(null),
+      !this.state.comments ? api.post.getComments(this.props.id) : Promise.resolve(null)
     ])
 
     this.setState({
       loading: false,
-      user,
-      comments,
+      user: user || this.state.user,
+      comments: comments || this.state.comments,
     })
   }
 
   render () {
     return (
       <article id={`post-${this.props.id}`}>
-        <h2>{this.props.title}</h2>
+        <Link to={`post/${this.props.id}`}>
+          {this.props.title}
+        </Link>
         <p>{this.props.body}</p>
 
         {!this.state.loading && (
           <div>
-            <a href={`//${this.state.user.website}`} target="_blank" rel="nofollow">
+            <Link to={`/user/${this.state.user.id}`}>
               {this.state.user.name}
-            </a>
+            </Link>
             <span>Hay {this.state.comments.length} comentarios</span>
           </div>
         )}
