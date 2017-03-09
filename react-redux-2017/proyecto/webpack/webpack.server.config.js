@@ -1,48 +1,42 @@
-'use strict'
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  // El primer archivo que va a leer webpack.
-  entry: './source/server.js',
-  // Donde Webpack va a dejar los archivos.
+  entry: './source/server.jsx',
   output: {
     filename: 'index.js',
     path: './built/server',
   },
-
-  // Los modulos nos permiten hacer cosas.
   module: {
-    // Los loaders son formas que webpack puede tomar cierto tipo de archivos y procesarlos
-    // de una forma en particular.
     rules: [
       {
-        // Si el archivo es .json
         test: /\.json$/,
-        // Va a utilizar el loader json.
-        loader: 'json-loader',
+        loader: 'json',
       },
       {
-        // Si el archivo es .jsx o .js (? le dice que la x es opcional).
         test: /\.jsx?$/,
-        // Usar el loader babel.
         loader: 'babel-loader',
-        // Le decimos que excluya los node_modules puesto que ellos ya estan hechos
-        // de manera que funcionen con ES2015 por lo que no necesitamos usar babel.
-        exclude: /{node_modules}/,
-        // Le pasamos la informacion de como configurar babel.
+        exclude: /(node_modules)/,
         query: {
-          // Los presets en babel son conjunto de plugins.
-          presets: [
-            // Detecta las caracteristicas de ES2015, ES2016 y ES2017
-            // que soporta la version oficial de Node que estamos utilizando
-            // y solamente agrega los plugins para convertir lo que no funcione.
-            'latest-minimal',
-            // Nos da soporte a JSX.
-            'react'
-          ]
-        }
-      }
-    ]
+          presets: ['latest-minimal', 'react'],
+        },
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?modules' }),
+      },
+      {
+        test: /\.jsx?$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/,
+      },
+    ],
   },
-  // Nos permite usar los modulos nativos de Node.
-  target: 'node'
-}
+  target: 'node',
+  resolve: {
+    extensions: ['.js', '.jsx', '.css'],
+  },
+  plugins: [
+    new ExtractTextPlugin('../built/statics/styles.css'),
+  ],
+};

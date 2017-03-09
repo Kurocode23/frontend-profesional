@@ -43,9 +43,10 @@ function requestHandler (req, res) {
     renderToStaticMarkup(
       <Layout
         title="Aplicacion"
-        content={html}>
-      </Layout>
-    )
+        content={html}
+      >
+      </Layout>,
+    ),
   )
   res.end()
 }
