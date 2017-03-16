@@ -1,42 +1,40 @@
-'use strict'
+import http from 'http';
+import React from 'react';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server'; 
+import { ServerRouter, createServerRenderContext } from 'react-router';
 
-import http from 'http'
-import React from 'react'
-import { renderToString, renderToStaticMarkup } from 'react-dom/server'
-import { ServerRouter, createServerRenderContext } from 'react-router'
+import Pages from './pages/containers/Page.jsx';
+import Layout from './pages/components/Layout.jsx';
 
-import Pages from './pages/containers/Page.jsx'
-import Layout from './pages/components/Layout.jsx'
-
-function requestHandler (req, res) {
+function requestHandler(req, res) {
   const context = createServerRenderContext()
+
+  res.setHeader('Content-Type', 'text/html');
 
   let html = renderToString(
     <ServerRouter location={req.url} context={context}>
       <Pages />
     </ServerRouter>
-  )
+  );
 
-  res.setHeader('Content-Type', 'text/html')
-
-  const result = context.getResult()
-
-  if (result.redirect) {
+  const result = context.getResult();
+  
+  if(result.redirect) {
     res.writeHead(301, {
       Location: result.redirect.pathname,
-    })
+    });
 
-    res.end()
+    res.end();
   }
 
-  if (result.missed) {
-    res.writeHead(404)
+  if(result.missed) {
+    res.writeHead(404);
 
     html = renderToString(
       <ServerRouter location={req.url} context={context}>
         <Pages />
       </ServerRouter>
-    )
+    );
   }
 
   res.write(
@@ -44,13 +42,12 @@ function requestHandler (req, res) {
       <Layout
         title="Aplicacion"
         content={html}
-      >
-      </Layout>,
-    ),
-  )
-  res.end()
+      />
+    )
+  );
+  res.end();
 }
 
-const server = http.createServer(requestHandler)
+const server = http.createServer(requestHandler);
 
 server.listen(8080)

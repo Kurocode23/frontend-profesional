@@ -1,37 +1,43 @@
 import fetch from 'isomorphic-fetch';
 
-const baseUrl = 'https://jsonplaceholder.typicode.com';
+const baseURL = 'https://jsonplaceholder.typicode.com';
 
-const api = {
+const api =  {
   posts: {
     async getList(page = 1) {
-      const response = await fetch(`${baseUrl}/posts?_page=${page}`);
-      const data = await response.json();
+      const response = await fetch(`${baseURL}/posts?_page=${page}`);
+      const data = await response.json()
+
       return data;
     },
     async getSingle(id = 1) {
-      const response = await fetch(`${baseUrl}/posts/${id}`);
+      const response = await fetch(`${baseURL}/posts/${id}`);
       const data = await response.json();
+
       return data;
     },
     async getComments(id = 1) {
-      const response = await fetch(`${baseUrl}/post/${id}/comments`);
+      const response = await fetch(`${baseURL}/posts/${id}/comments`);
       const data = await response.json();
+
       return data;
     },
   },
   users: {
     async getSingle(id = 1) {
-      const response = await fetch(`${baseUrl}/users/${id}`);
+      const response = await fetch(`${baseURL}/users/${id}`);
       const data = await response.json();
+
       return data;
     },
-    async getPosts(id = 1) {
-      const response = await fetch(`${baseUrl}/posts/?userId=${id}`);
+    
+    async getPost(id = 1) {
+      const response = await fetch(`${baseURL}/posts?userId=${id}`);
       const data = await response.json();
+
       return data;
-    },
-  },
-};
+    }
+  }
+}
 
 export default api;
