@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 const baseURL = 'https://jsonplaceholder.typicode.com';
 
-const api =  {
+const api = {
   posts: {
     async getList(page = 1) {
       const response = await fetch(`${baseURL}/posts?_page=${page}`);
@@ -30,14 +30,13 @@ const api =  {
 
       return data;
     },
-    
     async getPost(id = 1) {
       const response = await fetch(`${baseURL}/posts?userId=${id}`);
       const data = await response.json();
 
       return data;
-    }
-  }
-}
+    },
+  },
+};
 
 export default api;

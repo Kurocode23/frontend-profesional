@@ -1,48 +1,100 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import Post from './../../posts/containers/Post.jsx';
+import actions from './../../actions';
 
-import api from './../../api';
+import Post from './../../posts/containers/Post';
+import Loading from './../../shared/components/Loading';
+
+import styles from './Page.css';
 
 class Home extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.handleScroll = this.handleScroll.bind(this);
 
     this.state = {
-      page: 1,
-      posts: [],
       loading: true,
-    }
+    };
   }
 
-  async componentDidMount() {
-    const posts = await api.posts.getList(this.state.page);
+  componentDidMount() {
+    this.initialFetch();
+    window.addEventListener('scroll', this.handleScroll);
+  }
 
-    this.setState({
-      posts,
-      page: this.state.page + 1,
-      loading: false,
-    })
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+
+  async initialFetch() {
+    await this.props.actions.postsNextPage();
+
+    this.setState({ loading: false });
+  }
+
+  handleScroll() {
+    if (this.state.loading) return null;
+
+    const scrolled = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const fullHeight = document.body.clientHeight;
+
+    if (!(scrolled + viewportHeight + 300) >= fullHeight) {
+      return null;
+    }
+
+    return this.setState({
+      loading: true,
+    }, async () => {
+      try {
+        await this.props.actions.postsNextPage();
+      } catch (error) {
+        console.error(error);
+      }
+    });
   }
 
   render() {
     return (
-      <section name="Home">
-        <h1>Home</h1>
-
-        <section>
-          {this.state.loading && (
-            <h2>Loading posts...</h2>
-          )}
-          
+      <section className={styles.section} name="Home">
+        <section className={styles.list}>
           {
-            this.state.posts.map(post => <Post key={post.id} {...post} />)
+            this.props.posts
+              .map(post => <Post key={post.get('id')} {...post.toJS()} />)
+              .toArray()
           }
+
+          {this.state.loading && (
+            <Loading />
+          )}
         </section>
       </section>
-    )
+    );
   }
 }
 
-export default Home;
+Home.propTypes = {
+  actions: PropTypes.objectOf(PropTypes.func),
+  posts: PropTypes.arrayOf(PropTypes.object),
+  page: PropTypes.number,
+  get: PropTypes.func,
+};
+
+function mapStateToProps(state) {
+  return {
+    posts: state.get('posts').get('entities'),
+    page: state.get('posts').get('page'),
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

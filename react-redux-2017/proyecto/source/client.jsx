@@ -1,0 +1,30 @@
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router';
+import { addLocaleData, IntlProvider } from 'react-intl';
+import { Provider } from 'react-redux';
+import en from 'react-intl/locale-data/en';
+import es from 'react-intl/locale-data/es';
+
+import store from './store';
+
+import messages from './messages.json';
+import Pages from './pages/containers/Page';
+
+addLocaleData([...en, ...es]);
+
+const locale = navigator.languages.indexOf('es') >= 0 ? 'es' : 'en';
+
+console.log(locale);
+
+render(
+  <Provider store={store}>
+    <IntlProvider locale={locale} messages={messages[locale]}>
+      <BrowserRouter>
+        <Pages />
+      </BrowserRouter>
+    </IntlProvider>
+  </Provider>,
+  document.getElementById('render-target'),
+);
+
