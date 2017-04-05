@@ -1,0 +1,22 @@
+{
+  "name": "platzom",
+  "version": "0.1.0",
+  "description": "Traductor de idioma Platzom",
+  "main": "dist/src/platzom.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "babel src/platzom.js -d dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kurocode23/platzom.git"
+  },
+  "author": "Alan Aliaga <alanaliaga23@gmail.com> (https://twitter.com/kurocode)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.3.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
