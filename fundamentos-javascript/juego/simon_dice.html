@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Simon Dice</title>
+    <!--<link href="Simon%20Dice_archivos/css.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="Simon%20Dice_archivos/simon.xml">-->
+    <link rel="stylesheet" type="text/css" href="sweetalert.css">
+    <link rel="stylesheet" href="./simon.css" />
+  </head>
+  <body>
+    <div class="keyboard">
+      <div class="row">
+        <div class="key" data-key="81">q</div>
+        <div class="key" data-key="87">w</div>
+        <div class="key" data-key="69">e</div>
+        <div class="key" data-key="82">r</div>
+        <div class="key" data-key="84">t</div>
+        <div class="key" data-key="89">y</div>
+        <div class="key" data-key="85">u</div>
+        <div class="key" data-key="73">i</div>
+        <div class="key" data-key="79">o</div>
+        <div class="key" data-key="80">p</div>
+      </div>
+      <div class="row">
+        <div class="key" data-key="65">a</div>
+        <div class="key" data-key="83">s</div>
+        <div class="key" data-key="68">d</div>
+        <div class="key" data-key="70">f</div>
+        <div class="key" data-key="71">g</div>
+        <div class="key" data-key="72">h</div>
+        <div class="key" data-key="74">j</div>
+        <div class="key" data-key="75">k</div>
+        <div class="key" data-key="76">l</div>
+      </div>
+      <div class="row last">
+        <div class="key" data-key="90">z</div>
+        <div class="key" data-key="88">x</div>
+        <div class="key" data-key="67">c</div>
+        <div class="key" data-key="86">v</div>
+        <div class="key" data-key="66">b</div>
+        <div class="key" data-key="78">n</div>
+        <div class="key" data-key="77">m</div>
+      </div>
+    </div>
+    <script src="sweetalert.min.js"></script>
+    <script>
+      const niveles = 15
+      let keys = generateTeclas(niveles)
+
+      function siguienteNivel (nivelActual) {
+        if (nivelActual === niveles) {
+          return swal({
+            title: 'Ganaste!',
+            text: 'Quieres jugar de nuevo?',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No',
+            closeOnConfirm: true
+          }, function (ok) {
+            if (ok) {
+              keys = generateTeclas(niveles)
+              siguienteNivel(0)
+            }
+          })
+        }
+
+        swal({
+          title: `Nivel ${nivelActual + 1}`,
+          timer: 1000,
+          showConfirmButton: false
+        })
+
+        for (let i = 0; i <= nivelActual; i++) {
+          setTimeout(() => activate(keys[i]), 1000 * (i+1) + 1000)
+        }
+
+        let i = 0
+        let teclaActual = keys[i]
+
+        window.addEventListener('keydown', onKeyDown)
+
+        function onKeyDown (ev) {
+          if (ev.keyCode === teclaActual) {
+            activate(teclaActual, { success: true })
+            i++
+
+            if (i > nivelActual) {
+              window.removeEventListener('keydown', onKeyDown)
+              
+              setTimeout(() => siguienteNivel(i), 1500)
+            }
+
+            teclaActual = keys[i]
+          } else {
+            activate(ev.keyCode, { fail: true })
+            window.removeEventListener('keydown', onKeyDown)
+            swal({
+              title: 'Perdiste :(',
+              timer: 1000,
+              showCancelButton: true,
+              confirmButtonText: 'Si',
+              cancelButtonText: 'No',
+              closeOnConfirm: true
+            }, function (ok) {
+              if (ok) {
+                keys = generateTeclas(niveles)
+                siguienteNivel(0)
+              }
+            })
+          }
+        }
+      }
+
+      siguienteNivel(0)
+
+
+      function generarTeclaAleatoria () {
+        const min = 65
+        const max = 90
+        return Math.round(Math.random() * (max - min) + min)
+      }
+
+      function generateTeclas (niveles) {
+        return new Array(niveles).fill(0).map(generarTeclaAleatoria)
+      }
+
+      function getElementByKeyCode (keyCode) {
+        return document.querySelector(`[data-key="${keyCode}"]`)
+      }
+
+      function activate (keyCode, opts = {}) {
+        const el = getElementByKeyCode(keyCode)
+        el.classList.add('active')
+
+        if (opts.success) {
+          el.classList.add('success')
+        } else if (opts.fail) {
+          el.classList.add('fail')
+        }
+
+        setTimeout(() => deacivate(el), 500)
+      }
+
+      function deacivate (el) {
+        el.className = 'key'
+      }
+    </script>
+  
+  </body>
+</html>
