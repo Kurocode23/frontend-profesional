@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Transformacion translate</title>
+  <title>Transformacion punto de origen</title>
 </head>
 
 <style>
@@ -19,23 +19,26 @@
 
   .container {
     border: 1px solid red;
-    perspective: 200px;
-    perspective-origin: center;
-    /*perspective-origin: top;*/
-    /*perspective-origin: bottom;*/
-    /*perspective-origin: left;*/
-    /*perspective-origin: right;*/
-    /*perspective-origin: top right;*/
   }
 
   .container:hover .cuadrado {
-    /*transform: translate(-100px);*/
-    /*transform: translate(100px, 100px);*/
-    /*transform: translate(-100px, -100px);*/
-    /*transform: translateX(-100px);*/
-    /*transform: translateY(-100px);*/
-    /*transform: translate3d(100px, 100px, 100px);*/
-    transform: translate3d(-100px, -100px, -100px);
+    /*transform: rotate(45deg);*/
+    /*transform: rotate(-45deg);*/
+    /*transform: rotateX(45deg);*/
+    transform: rotateY(45deg);
+    /*transform: rotateZ(45deg);*/
+    /*transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);*/
+    /*transform: rotate3d(1, 0, 0, 45deg);*/
+    /*transform-origin: 50% 50%;*/
+    /*transform-origin: top;*/
+    /*transform-origin: bottom;*/
+    /*transform-origin: left;*/
+    /*transform-origin: right;*/
+    /*transform-origin: left top;*/
+    /*transform-origin: right top;*/
+    /*transform-origin: right bottom;*/
+    /*transform-origin: left bottom;*/
+    transform: 100%  50%;
   }
 
   .cuadrado {
