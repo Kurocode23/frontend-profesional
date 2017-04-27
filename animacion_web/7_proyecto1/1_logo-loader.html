@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Platzi logo loader</title>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+      background-color: #234050;
+    }
+    
+    .platzi {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      margin: 40px auto;
+      /*background-color: red;*/
+      transform: rotate(45deg);
+      animation-name: platzi-base;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+    }
+
+    .platzi-left, .platzi-right {
+      box-sizing: border-box;
+      position: relative;
+      top: 1px;
+    }
+
+    .platzi-left {
+      width: 100%;
+      height: 65%;
+      border: 20px solid #97C93E;
+      border-bottom: none;
+      border-radius: 20px 20px 0 0;
+      animation-name: platzi-left;
+      animation-duration: 3.5s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .platzi-right {
+      width: 100%;
+      height: 35%;
+      border: 20px solid #97C93E;
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+    }
+
+    @keyframes platzi-base {
+      0% {
+        opacity: 0;
+        transform: rotate(0deg) scale(.3);
+      }
+
+      30% {
+        opacity: 1;
+        transform: rotate(405deg) scale(.8);        
+      }
+
+      80% {
+        opacity: .1;
+        transform: rotate(405deg) scale(.8);
+      }
+
+      100% {
+        opacity: 0;
+        transform: rotate(0deg) scale(.3);
+      }
+    }
+
+    @keyframes platzi-left {
+      0% {
+        width: 100%;
+      }
+
+      20% {
+        width: 80%;
+      }
+
+      50% {
+        width: 80%;
+      }
+
+      70% {
+        width: 100%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="platzi">
+    <div class="platzi-left"></div>
+    <div class="platzi-right"></div>
+  </div>
+</body>
+</html>
