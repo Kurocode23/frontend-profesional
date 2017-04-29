@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class Portada extends Component {
   render () {
@@ -27,4 +28,11 @@ class Portada extends Component {
   }
 }
 
-export default Portada
+function mapStateToProps (state) {
+  return {
+    logo: state.logoPortada,
+    menu: state.menu,
+  }
+}
+
+export default connect(mapStateToProps)(Portada)
