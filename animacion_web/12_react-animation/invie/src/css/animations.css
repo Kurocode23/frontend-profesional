@@ -3,9 +3,9 @@
 }
 
 .flicker-enter {
-  animation-name: flicker;
-  animation-duration: .5s;
-  animation-timing-function: linear;
+  animation-name: flicker, shake;
+  animation-duration: .5s, .7s;
+  animation-timing-function: linear, ease-in-out;
 }
 
 .flicker-enter-active {
@@ -13,13 +13,40 @@
 }
 
 .flicker-leave {
-  animation-name: flicker;
-  animation-duration: .5s;
-  animation-timing-function: linear;
+  animation-name: flicke, shake;
+  animation-duration: .5s, .7s;
+  animation-timing-function: linear, ease-in-out;
 }
 
 .flicker-leave-active {
   
+}
+
+.fade {
+
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(.5);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s;
+}
+
+.fade-leave {
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  transform: scale(.5);
+  transition: .3s;
 }
 
 @keyframes flicker {
@@ -116,4 +143,115 @@
     transform: rotateY(360deg);
   }
 
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+
+  20%, 80% {
+    transform: translateX(2px);
+  }
+
+  30%, 50%, 70% {
+    transform: translateX(-4px);
+  }
+
+  40%, 60% {
+    transform: translateX(4px);
+  }
+  
+}
+
+/*animation: animationOut .8s forwards;*/
+.animationInOut-enter {
+  animation: animationIn .8s;
+}
+
+.animationInOut-leave {
+  animation: animationOut .8s;  
+}
+
+ @keyframes animationIn {
+  0% {
+    transform: translateY(-3000px);
+  }
+
+  60% {
+    transform: translateY(25px);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+
+  90% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes animationOut {
+  0% {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+
+  75% {
+    transform: translateY(25px);
+  }
+
+  100% {
+    transform: translateY(-3000px);
+  }
+}
+
+.like {
+  cursor: pointer;
+  /*width: 100px;
+  height: 100px;*/
+  width: 50px;
+  height: 50px;
+  /*background-color: red;*/
+  background-image: url('./../images/corazon.png');
+  background-size: 1450px 50px;
+  position: fixed;
+  bottom: -100px;
+}
+
+.like.is-liked {
+  animation-name: like, move;
+  animation-duration: .8s, 5s;
+  animation-timing-function: steps(28), linear;
+  /*background-position: -2800px 0;*/
+  /*background-position: right;*/
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite, 1;
+}
+
+@keyframes like {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: right;
+    /*background-position: -2800px 0;*/
+  }
+}
+
+
+@keyframes move {
+  from {
+    position: absolute;
+    bottom: 0;
+  }
+
+  to {
+    position: absolute;
+    bottom: 110%;
+  }
 }

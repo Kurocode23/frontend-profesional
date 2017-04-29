@@ -9,6 +9,7 @@ import './css/invie.css';
 import './css/animations.css';
 
 import logoPortada from './images/invie.png'
+import logoPlatzi from './images/platzilogo.png'
 import acustica from './images/invie-acustica.png'
 import classic from './images/invie-classic.png'
 import easterA from './images/easter-a.png'
@@ -16,6 +17,7 @@ import easterB from './images/easter-b.png'
 
 const initialState = {
   logoPortada,
+  isAnimated: false,
   menu: [
     { href: 'index.html', title: 'Home' },
     { href: '#guitarras', title: 'Guitarras' },
@@ -46,8 +48,9 @@ const initialState = {
 }
 
 const easter = {
+  isAnimated: 'is-animated',
+  logoPortada: logoPlatzi,
   menu: [
-    { href: 'index.html', title: 'Home' },
   ],
   guitarras: [
     {
